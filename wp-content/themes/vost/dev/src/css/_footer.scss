@@ -1,0 +1,174 @@
+footer {
+  background-color: darken($hardgray, 20%);
+  width: 100%;
+  color:$white;
+  padding: 50px 25px;
+  .footer-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    .footer-section {
+      flex-grow: 1;
+      max-width: calc((100% / 3 ) - (100px / 3));
+      margin-right: 50px;
+      margin-bottom: 25px;
+      color: darken($white, 20%);
+      h3 {
+        color:$white;
+        margin-bottom: 35px;
+        font-size: 1.3rem;
+        font-family: $font-slab;
+        font-weight: 700;
+      }
+      p {
+        color: darken($white, 20%);
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin-bottom: 10px;
+      }
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+    @include mq(md){
+      flex-direction: column;
+      .footer-section {
+        max-width: 100%;
+        
+        margin-right: 0;
+      }
+    }
+  }
+  .footerino {
+    width: 100%;
+    border-top: $white solid 1px;
+    padding: 15px 0;
+    display: flex;
+justify-content: space-between;
+align-items: center;
+@include mq(md){
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.name {
+  display: flex;
+  align-items: center;
+  margin-right: 25px;
+  color:$white;
+  font-size: 0.9rem;
+  font-size: $font-slab;
+  @include mq(md){
+    margin-right: 0;
+    margin-bottom: 25px;
+  }
+}
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      @include mq(md){
+        flex-direction: column;
+        margin-bottom: 25px;
+      }
+      li {
+        a {
+          display: inline-block;
+          padding: 15px 25px;
+        text-transform: uppercase;
+        color:$white;
+        font-size: 0.8rem;
+        &:hover {
+          color:$pink;
+        }
+        }
+        
+      }
+    }
+    .social {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-left: 35px;
+      @include mq(md){
+        margin-left: 0;
+        //margin-bottom: 25px;
+      }
+      a {
+        display: inline-block;
+        width:28px;
+        height:28px;
+        margin-left: 15px;
+        &:hover {
+          svg {
+            path {
+              fill: $pink;
+            }
+          }
+        }
+        svg {
+          width: 100%;
+          height: 100%;
+          path {
+            fill: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+#cookie {
+  position: fixed;
+  bottom: 0;
+  left:0;
+  width: 100%;
+  padding: 10px 25px;
+  background-color: $white;
+  color:$hardgray;
+  box-shadow: 0 1px 10px -6px rgba(49,64,85,.42),0 1px 10px 0 rgba(49,64,85,.12),0 4px 5px -2px rgba(49,64,85,.1);
+  z-index: 100;
+  @include mq(sm){
+   padding: 10px 10px;
+    
+  }
+  &.hide {
+    display: none;
+  }
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include mq(sm){
+      flex-direction: column;
+
+    }
+    
+  }
+  p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    @include mq(sm){
+      font-size: 0.8rem;
+      
+    }
+  }
+  button {
+    border: 0;
+    background-color: $pink;
+    color:$white;
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding: 5px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25px;
+    @include mq(sm){
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  }
+}

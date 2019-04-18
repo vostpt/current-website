@@ -1,0 +1,1 @@
+"use strict";document.addEventListener("DOMContentLoaded",function(){var e=jQuery;e(".testimonials__wrap").slick({infinite:!1,dots:!0,speed:300,slidesToShow:3,slidesToScroll:3,autoplay:!0,autoplaySpeed:15e3,lazyLoad:"ondemand",prevArrow:e(".prev"),nextArrow:e(".next"),responsive:[{breakpoint:920,settings:{slidesToShow:1,slidesToScroll:1,dots:!1}}]})});

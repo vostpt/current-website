@@ -1,0 +1,120 @@
+
+
+
+$maxwidth: 1280px;
+$white: #f8f8f8;
+$black: #314055;
+$pink: #d80917;
+$gray: rgba($black, 0.55);
+$hardgray: #4d4d4d;
+$font: 'Roboto', sans-serif;
+$font: 'Archivo', sans-serif;
+$font-slab: 'Roboto Slab', serif;
+
+
+a {
+  text-decoration: none;
+  color: $pink;
+}
+
+
+
+//Media queries
+@mixin mq($point) {
+  $xs: "(min-width : 0px)";
+  $sm: "(max-width : 510px)";
+  $md: "(max-width : 920px)";
+  $lg: "(max-width : 1240px)";
+  $vl: "(min-width : #{$point}px)";
+
+  @if $point==xs {
+    @media #{$xs} {
+      @content;
+    }
+  }
+
+  @else if $point==sm {
+    @media #{$sm} {
+      @content;
+    }
+  }
+
+  @else if $point==md {
+    @media #{$md} {
+      @content;
+    }
+  }
+
+  @else if $point==lg {
+    @media #{$lg} {
+      @content;
+    }
+  }
+  @else {
+    @media #{$vl} {
+       @content;
+    }
+  }
+}
+
+*,*:after,*:before {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font;
+  color:$black;
+}
+
+/*
+::selection {
+  color: $white;
+  background: $main-color;
+}*/
+
+.withmargins {
+  max-width: $maxwidth;
+  margin: 0 auto;
+  position: relative;
+}
+
+.main-content {
+  //padding-top: 75px;
+  overflow-x: hidden;
+  
+  background-color:$white;
+  margin: 0 25px;
+  border-radius: 6px 6px 0 0;
+  box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14),0 6px 30px 5px rgba(0,0,0,0.12),0 8px 10px -5px rgba(0,0,0,0.2);
+  z-index: 10;
+  margin-top: -80px;
+  @include mq(md){
+    margin:0;
+  }
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin: 35px 0;
+  text-align: center;
+}
+p.geral {
+  text-align: center;
+  line-height: 1.4;
+  color:$gray;
+  font-size: 1.3rem;
+  margin:0 auto;
+  margin-bottom: 50px;
+  max-width: 700px;
+  
+}
+
+//inline na pagina
+@import 'slick';
+
+@import 'header';
+@import 'home';
+@import 'footer';
+@import 'single';
+
+//@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700|Archivo:400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Archivo:400,700');

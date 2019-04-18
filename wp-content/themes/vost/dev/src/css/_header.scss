@@ -1,0 +1,172 @@
+.header {
+  height: 50px;
+  width: 100%;
+ 
+  z-index:999;
+  top:0;
+  left:0;
+  position: fixed;
+  &.scroll {
+    background-color: $white;
+    box-shadow: 0 1px 10px -6px rgba($black,0.42),0 1px 10px 0 rgba($black,0.12),0 4px 5px -2px rgba($black,0.1);
+    
+  }
+  @include mq(md){
+    //background-color: $white;
+  }
+  &__container {
+    height: 100%;
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 25px;
+  }
+  &__logo {
+    height: 26px;
+    display: inline-block;
+    img {
+      object-fit: contain;
+      height: 100%;
+      //width: 100%;
+    }
+  }
+  &__menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    @include mq(md){
+      position: fixed;
+      top: 50px;
+      right: 0;
+      background-color: $white;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: all 0.5s ease-in-out;
+      padding: 25px;
+      align-items: flex-end;
+      &.active {
+        transform: translateX(0%);
+      }
+    }
+    ul.menu {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      list-style: none;
+      @include mq(md){
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-start;
+        
+      }
+       li {
+        padding: 10px 25px;
+        margin-left: 25px;
+        text-transform: uppercase;
+        font-size: 1rem;
+        position: relative;
+        a {
+          color: $hardgray;
+          &:hover {
+            color:$pink;
+          }
+        }
+        @include mq(md){
+          text-align: right;
+          //margin-right: 25px;
+          margin-left: 0;
+         &.wpml-ls-menu-item {
+           order:-1;
+         }
+        }
+        .sub-menu {
+            position: absolute;
+            display: none;
+            top:100%;
+            left:0;
+            list-style: none;
+            background-color: $white;
+            @include mq(md){
+              display: block;
+              position: relative;
+              top:unset;
+              left: unset;
+              li {
+                margin-right: 0px;
+                padding-right:0;
+                font-size: 0.8rem;
+              }
+              
+            }
+          }
+          &:hover {
+            .sub-menu {
+              display: block;
+            }
+          } 
+    }
+  }
+    .social {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-left: 35px;
+      @include mq(md){
+        margin-left: auto;
+        margin-right: auto;
+      }
+      a {
+        display: inline-block;
+        width:25px;
+        height:25px;
+        margin-left: 15px;
+        
+
+        svg {
+          width: 100%;
+          height: 100%;
+          path {
+            fill: $hardgray;
+          }
+        }
+        &:hover {
+          color:$pink;
+          path {
+            fill:$pink;
+          }
+        }
+      }
+    }
+  } 
+  
+  .menuicon {
+    display: none;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    svg {
+      height: 100%;
+      width: 100%;
+      path {
+        fill: $hardgray;
+      }
+    }
+    @include mq(md){
+      display: inline-block;
+    }
+    #close {
+      display: none;
+    }
+    &.active {
+      width: 20px;
+      height: 20px;
+      #open {
+        display: none;
+      }
+      #close {
+        display: block;
+      }
+    }
+  }
+}
