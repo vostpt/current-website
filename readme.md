@@ -2,7 +2,7 @@
 
 Read this in [Portuguese](readme.pt.md)
 
-Actual version: wp 5.1.1, com plugins wpml, acf, wp bakery, classic editor e acf extended forms instalados.
+Actual version: wp 5.1.1, with wpml, acf, wp bakery, classic editor and acf extended forms plugins installed.
 
  - **[WPML](https://wpml.org/)** - multilingue management
  - **[ACF](https://www.advancedcustomfields.com/)** - to create custom fields for backoffice
@@ -13,15 +13,15 @@ Actual version: wp 5.1.1, com plugins wpml, acf, wp bakery, classic editor e acf
 
 ## Development environment
 
-The production environment is made to work with GULP, SASS, Babel, and image optimization. You can work without this, but the production files are minified.
+The production environment is made to work with GULP, SASS, Babel, and image optimization. You can work without this, but the production files are minified;
 
-Files in *[/wp-content/themes/vost/dev](https://github.com/vostpt/current-website/tree/master/wp-content/themes/vost/dev)*
+Files in *[/wp-content/themes/vost/dev](wp-content/themes/vost/dev)*.
 
 ## Installation
 
 Run `npm install` and then `gulp serve`;
 
-In folder [/wp-content/themes/vost/dev](https://github.com/vostpt/current-website/tree/master/wp-content/themes/vost/dev) there will be the production environment to minification, transpile and compilation of css and js code;
+In folder [/wp-content/themes/vost/dev](wp-content/themes/vost/dev) there will be the production environment to minification, transpile and compilation of css and js code;
 
 Inside */dev* folder make `npm install`, and then run gulp with `gulp serve`;
 
@@ -29,11 +29,11 @@ Inside */dev* folder make `npm install`, and then run gulp with `gulp serve`;
 
 */src/media* the images are optimized while gulp is starting, after that they're only copied (CPU processing issues - you can edit gulpfile if you want);
 
-*/src/js/* concatenated, transpiled and minified;
-*/src/js/* vendor copied directly without changes;
+*/src/js/* concatenated, transpiled and minified.
+*/src/js/* vendor copied directly without changes.
 */src/js/* unique minified and transpiled;
 
-*/src/css/unique* copied directly without merge;
+*/src/css/unique* copied directly without merge.
 */src/css* minified;
 
 Inside */src* folder there will be .sql database. After import it's necessary to change in wp_options the 2 site url fields;
