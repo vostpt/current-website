@@ -1,6 +1,6 @@
 # vost wordpress theme
 
-Read this in [Portuguese](https://github.com/vostpt/current-website/blob/master/readme.pt.md)
+Read this in [Portuguese](readme.pt.md)
 
 Actual version: wp 5.1.1, com plugins wpml, acf, wp bakery, classic editor e acf extended forms instalados.
 
