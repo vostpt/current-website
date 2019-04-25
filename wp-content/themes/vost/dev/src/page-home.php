@@ -311,7 +311,7 @@ if ( have_posts() ) {
 <?php if($membros) {  ?>
 <div class="team withmargins">
   <h2><?php echo $titlequipa; ?></h2>
-  <p class="geral"><?php $descequipa; ?></p>
+  <p class="geral"><?php echo $descequipa; ?></p>
   <div class="team__wrap">
   <?php echo $htmlmembros; ?>
   </div>
