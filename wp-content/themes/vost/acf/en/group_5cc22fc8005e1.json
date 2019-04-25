@@ -1,9 +1,9 @@
 {
-    "key": "group_5cb76de8d8cf1",
+    "key": "group_5cc22fc8005e1",
     "title": "Homepage",
     "fields": [
         {
-            "key": "field_5cb76f0a09372",
+            "key": "field_5cc22fc800651",
             "label": "Header",
             "name": "",
             "type": "tab",
@@ -21,7 +21,7 @@
             "wpml_cf_preferences": 0
         },
         {
-            "key": "field_5cb76fd509376",
+            "key": "field_5cc22fc8006bd",
             "label": "Texto principal",
             "name": "texto_principal",
             "type": "text",
@@ -42,7 +42,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_5cb76f3209374",
+            "key": "field_5cc22fc800729",
             "label": "frases",
             "name": "frases",
             "type": "repeater",
@@ -62,7 +62,7 @@
             "button_label": "",
             "sub_fields": [
                 {
-                    "key": "field_5cb76f6b09375",
+                    "key": "field_5cc22fc809ba7",
                     "label": "frases",
                     "name": "frases",
                     "type": "text",
@@ -85,7 +85,7 @@
             ]
         },
         {
-            "key": "field_5cb76f2109373",
+            "key": "field_5cc22fc80e23e",
             "label": "Imagens desktop",
             "name": "imagens_desktop",
             "type": "gallery",
@@ -111,7 +111,7 @@
             "mime_types": ""
         },
         {
-            "key": "field_5cb8e777784d8",
+            "key": "field_5cc22fc8108d2",
             "label": "Imagens mobile",
             "name": "imagens_mobile",
             "type": "gallery",
@@ -137,7 +137,7 @@
             "mime_types": ""
         },
         {
-            "key": "field_5cb7700409377",
+            "key": "field_5cc22fc81358b",
             "label": "informação vost",
             "name": "",
             "type": "tab",
@@ -155,7 +155,7 @@
             "wpml_cf_preferences": 0
         },
         {
-            "key": "field_5cb790c48879c",
+            "key": "field_5cc22fc8164eb",
             "label": "informação vost",
             "name": "vost_info",
             "type": "textarea",
@@ -176,7 +176,7 @@
             "wpml_cf_preferences": 0
         },
         {
-            "key": "field_5cb7720f0937e",
+            "key": "field_5cc22fc8196be",
             "label": "coluna1",
             "name": "coluna1",
             "type": "group",
@@ -193,7 +193,7 @@
             "layout": "row",
             "sub_fields": [
                 {
-                    "key": "field_5cb7713509378",
+                    "key": "field_5cc22fc81c67d",
                     "label": "titulo_coluna1",
                     "name": "titulo_coluna1",
                     "type": "text",
@@ -214,7 +214,7 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5cb7717c0937b",
+                    "key": "field_5cc22fc81c6f2",
                     "label": "desc_col1",
                     "name": "desc_col1",
                     "type": "textarea",
@@ -237,7 +237,7 @@
             ]
         },
         {
-            "key": "field_5cb7724f09380",
+            "key": "field_5cc22fc824743",
             "label": "coluna2",
             "name": "coluna2",
             "type": "group",
@@ -254,7 +254,7 @@
             "wpml_cf_preferences": 0,
             "sub_fields": [
                 {
-                    "key": "field_5cb7717109379",
+                    "key": "field_5cc22fc827a84",
                     "label": "titulo_coluna2",
                     "name": "titulo_coluna2",
                     "type": "text",
@@ -275,7 +275,7 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5cb771830937c",
+                    "key": "field_5cc22fc827af6",
                     "label": "desc_col2",
                     "name": "desc_col2",
                     "type": "textarea",
@@ -298,7 +298,7 @@
             ]
         },
         {
-            "key": "field_5cb7727b09382",
+            "key": "field_5cc22fc82fcf7",
             "label": "coluna3",
             "name": "coluna3",
             "type": "group",
@@ -315,7 +315,7 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_5cb771740937a",
+                    "key": "field_5cc22fc833026",
                     "label": "titulo_coluna3",
                     "name": "titulo_coluna3",
                     "type": "text",
@@ -336,7 +336,7 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5cb771870937d",
+                    "key": "field_5cc22fc833098",
                     "label": "desc_col3",
                     "name": "desc_col3",
                     "type": "textarea",
@@ -359,7 +359,7 @@
             ]
         },
         {
-            "key": "field_5cb776f2f0801",
+            "key": "field_5cc22fc83aa44",
             "label": "destaque",
             "name": "",
             "type": "tab",
@@ -377,7 +377,7 @@
             "wpml_cf_preferences": 0
         },
         {
-            "key": "field_5cb776fef0802",
+            "key": "field_5cc22fc83d9c9",
             "label": "artigo em destaque",
             "name": "artigo_em_destaque",
             "type": "relationship",
@@ -406,7 +406,7 @@
             "wpml_cf_preferences": 0
         },
         {
-            "key": "field_5cb7922900d7f",
+            "key": "field_5cc22fc841ab2",
             "label": "conteudo_destaque",
             "name": "conteudo_destaque",
             "type": "wysiwyg",
@@ -427,7 +427,7 @@
             "wpml_cf_preferences": 0
         },
         {
-            "key": "field_5cb77781f0803",
+            "key": "field_5cc22fc8469c0",
             "label": "Equipa",
             "name": "",
             "type": "tab",
@@ -445,7 +445,7 @@
             "wpml_cf_preferences": 0
         },
         {
-            "key": "field_5cb7778af0804",
+            "key": "field_5cc22fc84a202",
             "label": "titulo_equipa",
             "name": "titulo_equipa",
             "type": "text",
@@ -466,7 +466,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_5cb77792f0805",
+            "key": "field_5cc22fc84d531",
             "label": "descricao equipa",
             "name": "descricao_equipa",
             "type": "textarea",
@@ -487,7 +487,7 @@
             "wpml_cf_preferences": 0
         },
         {
-            "key": "field_5cb777a9f0806",
+            "key": "field_5cc22fc85033b",
             "label": "membros",
             "name": "membros",
             "type": "repeater",
@@ -508,7 +508,7 @@
             "wpml_cf_preferences": 0,
             "sub_fields": [
                 {
-                    "key": "field_5cb777bef0808",
+                    "key": "field_5cc22fc853066",
                     "label": "imagem",
                     "name": "imagem",
                     "type": "image",
@@ -534,7 +534,7 @@
                     "mime_types": ""
                 },
                 {
-                    "key": "field_5cb777b8f0807",
+                    "key": "field_5cc22fc8530d7",
                     "label": "nome",
                     "name": "nome",
                     "type": "text",
@@ -555,7 +555,7 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5cb777d9f0809",
+                    "key": "field_5cc22fc853146",
                     "label": "tipo",
                     "name": "tipo",
                     "type": "text",
@@ -576,7 +576,7 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5cb777e1f080a",
+                    "key": "field_5cc22fc8531b4",
                     "label": "descrição",
                     "name": "descricao",
                     "type": "textarea",
@@ -599,7 +599,7 @@
             ]
         },
         {
-            "key": "field_5cb77819f080b",
+            "key": "field_5cc22fc8604bc",
             "label": "testemunhos",
             "name": "",
             "type": "tab",
@@ -617,7 +617,7 @@
             "wpml_cf_preferences": 0
         },
         {
-            "key": "field_5cb77825f080c",
+            "key": "field_5cc22fc862d73",
             "label": "titulo testemunhos",
             "name": "titulo_testemunho",
             "type": "text",
@@ -638,7 +638,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_5cb77838f080d",
+            "key": "field_5cc22fc865e96",
             "label": "descrição testemunhos",
             "name": "descricao_testemunhos",
             "type": "textarea",
@@ -659,7 +659,7 @@
             "wpml_cf_preferences": 0
         },
         {
-            "key": "field_5cb77843f080e",
+            "key": "field_5cc22fc8687e1",
             "label": "testemunhos",
             "name": "testemunhos",
             "type": "repeater",
@@ -680,7 +680,7 @@
             "wpml_cf_preferences": 0,
             "sub_fields": [
                 {
-                    "key": "field_5cb77900f080f",
+                    "key": "field_5cc22fc871759",
                     "label": "nome",
                     "name": "nome",
                     "type": "text",
@@ -701,7 +701,7 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5cb77905f0810",
+                    "key": "field_5cc22fc8717cb",
                     "label": "handle",
                     "name": "handle",
                     "type": "text",
@@ -722,7 +722,7 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5cb7790ef0811",
+                    "key": "field_5cc22fc87183b",
                     "label": "texto",
                     "name": "texto",
                     "type": "textarea",
@@ -743,7 +743,7 @@
                     "wpml_cf_preferences": 0
                 },
                 {
-                    "key": "field_5cb77916f0812",
+                    "key": "field_5cc22fc8718aa",
                     "label": "imagem",
                     "name": "imagem",
                     "type": "image",
@@ -771,7 +771,7 @@
             ]
         },
         {
-            "key": "field_5cb77943f0813",
+            "key": "field_5cc22fc87ec21",
             "label": "Posts",
             "name": "",
             "type": "tab",
@@ -789,7 +789,7 @@
             "wpml_cf_preferences": 0
         },
         {
-            "key": "field_5cb7794ff0814",
+            "key": "field_5cc22fc88124a",
             "label": "titulo",
             "name": "titulo_posts",
             "type": "text",
@@ -810,7 +810,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_5cb77966f0815",
+            "key": "field_5cc22fc883fd7",
             "label": "desc_posts",
             "name": "desc_posts",
             "type": "textarea",
@@ -831,7 +831,7 @@
             "wpml_cf_preferences": 0
         },
         {
-            "key": "field_5cb77a43f0816",
+            "key": "field_5cc22fc886eca",
             "label": "Contacto",
             "name": "",
             "type": "tab",
@@ -849,7 +849,7 @@
             "wpml_cf_preferences": 0
         },
         {
-            "key": "field_5cb77a9af0817",
+            "key": "field_5cc22fc889f2e",
             "label": "contactos descrição",
             "name": "contactos_descricao",
             "type": "textarea",
@@ -870,7 +870,7 @@
             "wpml_cf_preferences": 0
         },
         {
-            "key": "field_5cb77ab1f0818",
+            "key": "field_5cc22fc88ce87",
             "label": "contactos superior",
             "name": "contactos_superior",
             "type": "textarea",
@@ -891,7 +891,7 @@
             "wpml_cf_preferences": 0
         },
         {
-            "key": "field_5cb77abff0819",
+            "key": "field_5cc22fc88fc1d",
             "label": "contactos inferior",
             "name": "contactos_inferior",
             "type": "textarea",
@@ -912,7 +912,7 @@
             "wpml_cf_preferences": 0
         },
         {
-            "key": "field_5cb77d9df081a",
+            "key": "field_5cc22fc89295e",
             "label": "footer",
             "name": "",
             "type": "tab",
@@ -930,7 +930,7 @@
             "wpml_cf_preferences": 0
         },
         {
-            "key": "field_5cb77daaf081b",
+            "key": "field_5cc22fc895c2f",
             "label": "descriçao_about us",
             "name": "descricao_about_us",
             "type": "textarea",
@@ -951,7 +951,7 @@
             "wpml_cf_preferences": 0
         },
         {
-            "key": "field_5cb7a4c85c25e",
+            "key": "field_5cc22fc898762",
             "label": "Social & cookie & g analytics",
             "name": "",
             "type": "tab",
@@ -968,7 +968,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_5cb7a4fb5c25f",
+            "key": "field_5cc22fc89b6ab",
             "label": "facebook",
             "name": "facebook",
             "type": "url",
@@ -985,7 +985,7 @@
             "placeholder": ""
         },
         {
-            "key": "field_5cb7a5045c260",
+            "key": "field_5cc22fc89e3e4",
             "label": "reddit",
             "name": "reddit",
             "type": "url",
@@ -1002,7 +1002,7 @@
             "placeholder": ""
         },
         {
-            "key": "field_5cb7a50b5c261",
+            "key": "field_5cc22fc8a1221",
             "label": "instagram",
             "name": "instagram",
             "type": "url",
@@ -1019,7 +1019,7 @@
             "placeholder": ""
         },
         {
-            "key": "field_5cb7a5145c262",
+            "key": "field_5cc22fc8a4077",
             "label": "twitter",
             "name": "twitter",
             "type": "url",
@@ -1036,7 +1036,7 @@
             "placeholder": ""
         },
         {
-            "key": "field_5cb8e51d6b5f9",
+            "key": "field_5cc22fc8a6eee",
             "label": "cookie content",
             "name": "cookie_consent",
             "type": "text",
@@ -1056,7 +1056,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_5cb8e5376b5fa",
+            "key": "field_5cc22fc8a99e3",
             "label": "google analytics tracking code",
             "name": "ganalytics",
             "type": "text",
@@ -1076,7 +1076,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_5cc22b2e69d68",
+            "key": "field_5cc22fc8ac14e",
             "label": "Imagem newsletter",
             "name": "imagem_newsletter",
             "type": "image",
@@ -1101,7 +1101,7 @@
             "mime_types": ""
         },
         {
-            "key": "field_5cc22b4069d69",
+            "key": "field_5cc22fc8af204",
             "label": "Imagem contactos",
             "name": "imagem_contactos",
             "type": "image",
@@ -1156,5 +1156,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1556230091
+    "modified": 1556230103
 }
