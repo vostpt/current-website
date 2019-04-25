@@ -122,7 +122,7 @@ $cookie = get_field('cookie_consent',icl_object_id(5, 'page', false,ICL_LANGUAGE
 	<!-- cookie consent / GDPR -->
 	<div id="cookie" class="hide">
 		<div class="content withmargins">
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum adipisci labore nulla iusto officia qui laboriosam dicta tenetur deserunt amet et asperiores, placeat beatae corporis minus quae, ratione illo ut?</p>
+			<p><?php echo $cookie; ?></p>
 			<button>Ok</button>
 		</div>
 	</div>

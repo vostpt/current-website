@@ -122,7 +122,7 @@ $cookie = get_field('cookie_consent',icl_object_id(5, 'page', false,ICL_LANGUAGE
 	<!-- cookie consent / GDPR -->
 	<div id="cookie" class="hide">
 		<div class="content withmargins">
-		<?php echo $cookie; ?>
+			<p><?php echo $cookie; ?></p>
 			<button>Ok</button>
 		</div>
 	</div>

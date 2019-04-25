@@ -236,6 +236,12 @@ $contactosdown = get_field('contactos_inferior');
 //footer desc
 $footerdesc = get_field('descricao_about_us');
 
+//imagem contacts
+$imagecontactos = wp_get_attachment_image(get_field('imagem_contactos'),'full');
+$imagenewsletter = wp_get_attachment_image(get_field('imagem_newsletter'),'full');
+
+
+
 //apanhar os 3 posts mais recentes
 global $wp_query; 
 $blogposts = "";
@@ -311,7 +317,7 @@ if ( have_posts() ) {
 <?php if($membros) {  ?>
 <div class="team withmargins">
   <h2><?php echo $titlequipa; ?></h2>
-  <p class="geral"><?php $descequipa; ?></p>
+  <p class="geral"><?php echo $descequipa; ?></p>
   <div class="team__wrap">
   <?php echo $htmlmembros; ?>
   </div>
@@ -347,7 +353,7 @@ if ( have_posts() ) {
 <?php } ?>
 <!--newsletter -->
 <div class="newsletter">
-<div class="newsletter__image"><img src="https://source.unsplash.com/800x650/?mountain" alt=""></div>
+<div class="newsletter__image"><?php echo $imagenewsletter; ?></div>
 <div class="newsletter__title">
   <h2><?php echo $assine; ?></h2>
   <p class="geral">Lorem ipsum dolor sit amet con inventore?</p>
@@ -366,7 +372,7 @@ if ( have_posts() ) {
 </div>
 <!--contact form -->
 <div class="contactform">
-  <div class="contactform__image"><img src="https://source.unsplash.com/500x650/?beach" alt=""></div>
+  <div class="contactform__image"><?php echo $imagecontactos; ?></div>
   <div class="contactform__wrap withmargins">
     <div class="contactform-left">
       <h2>Get in touch</h2>

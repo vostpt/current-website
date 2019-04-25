@@ -240,6 +240,8 @@ $footerdesc = get_field('descricao_about_us');
 $imagecontactos = wp_get_attachment_image(get_field('imagem_contactos'),'full');
 $imagenewsletter = wp_get_attachment_image(get_field('imagem_newsletter'),'full');
 
+
+
 //apanhar os 3 posts mais recentes
 global $wp_query; 
 $blogposts = "";
