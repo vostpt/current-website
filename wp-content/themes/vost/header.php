@@ -2,8 +2,8 @@
 
 //WPML translations
 //$my_home_url = apply_filters( 'wpml_home_url', get_option( 'home' ) );
-$keywords = "";
-$favicon = "";
+$keywords = "VOST Portugal, Voluntários Digitais Em Situações de Emergência, Voluntários Online Portugal";
+
 
 $currentlang = "pt";
 
@@ -139,10 +139,10 @@ $instagram  = get_field('instagram',icl_object_id(5, 'page', false,ICL_LANGUAGE_
 			<nav class="header__menu">
 				<?php wp_nav_menu(['menu'=>'header']); 	?>
 				<div class="social">
-				<?php if($facebook) { ?><a href="<?php echo $facebook; ?>" rel="nofollow noopener" title="facebook"><?php echo $facebooksvg; ?></a> <?php } ?>
-						<?php if($twitter) { ?><a href="<?php echo $twitter; ?>" rel="nofollow noopener" title="twitter"><?php echo $twittersvg; ?></a><?php } ?>
-						<?php if($reddit) { ?><a href="<?php echo $reddit; ?>" rel="nofollow noopener" title="reddit"><?php echo $redditsvg; ?></a><?php } ?>
-						<?php if($instagram) { ?><a href="<?php echo $instagram; ?>" rel="nofollow noopener" title="instagram"><?php echo $instasvg; ?></a><?php } ?>
+				<?php if($facebook) { ?><a href="<?php echo $facebook; ?>" rel="nofollow noopener"  target="_blank" title="facebook"><?php echo $facebooksvg; ?></a> <?php } ?>
+						<?php if($twitter) { ?><a href="<?php echo $twitter; ?>" rel="nofollow noopener"  target="_blank" title="twitter"><?php echo $twittersvg; ?></a><?php } ?>
+						<?php if($reddit) { ?><a href="<?php echo $reddit; ?>" rel="nofollow noopener" target="_blank"  title="reddit"><?php echo $redditsvg; ?></a><?php } ?>
+						<?php if($instagram) { ?><a href="<?php echo $instagram; ?>" rel="nofollow noopener"  target="_blank" title="instagram"><?php echo $instasvg; ?></a><?php } ?>
 				</div>
 			</nav>
 			<div class="menuicon">

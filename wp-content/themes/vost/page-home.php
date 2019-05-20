@@ -1,5 +1,92 @@
 <?php /* Template Name: HOMEPAGE */ ?>
-<?php get_header(); 
+<?php
+$TESTEMUNHOS_AND_MEDIA_PATH = get_template_directory() . "/testemunhos_media.json";
+$EQUIPA_PATH = get_template_directory() . "/equipa.json";
+$TESTUMUNHOS_AND_MEDIA_CACHE = 0; //in seconds
+$EQUIPA_CACHE = 0; //in seconds
+function str_gettsv($input, $delimiter = "\t", $enclosure = '"', $escape = "\\")
+{
+    return str_getcsv($input, "\t");
+}
+function sortByOrder($a, $b)
+{
+    return strcmp($a[1], $b[1]);
+}
+
+function fetchTestemunhosAndMedia()
+{
+    global $TESTEMUNHOS_AND_MEDIA_PATH, $TESTUMUNHOS_AND_MEDIA_CACHE;
+    $object = null;
+    $requires_new_fetch = true;
+    if (file_exists($TESTEMUNHOS_AND_MEDIA_PATH)) {
+        $json = file_get_contents($TESTEMUNHOS_AND_MEDIA_PATH);
+        $object = json_decode($json, true);
+        if ($object["timestamp"] + $TESTUMUNHOS_AND_MEDIA_CACHE > time()) {
+            $requires_new_fetch = false;
+        }
+    }
+    if ($requires_new_fetch) {
+        $csv = file_get_contents('https://docs.google.com/spreadsheets/d/1HymOxQKKdcLISfclW_wrnNsrh-Gcbpel611NDjDKmaA/export?format=tsv');
+        $fetched_object = array_map("str_gettsv", explode("\n", $csv));
+        $object = [];
+        $object["timestamp"] = time();
+        $media = [];
+        $testemunhos = [];
+        foreach ($fetched_object as $entry) {
+            if ($entry[1] == "OCS / Media") {
+                array_push($media, $entry);
+            } elseif ($entry[1] == "Testemunho Pessoal") {
+                $exploded_name = explode("@", $entry[2]);
+                $entry[2] = trim($exploded_name[0]);
+                $entry[7] = trim("@" . $exploded_name[1]);
+                array_push($testemunhos, $entry);
+            }
+        }
+        usort($testemunhos, 'sortByOrder');
+        $object["media"] = $media;
+        $object["testemunhos"] = $testemunhos;
+        $file = fopen($TESTEMUNHOS_AND_MEDIA_PATH, "w");
+        fwrite($file, json_encode($object));
+        fclose($file);
+    }
+    return $object;
+}
+function fetchEquipa()
+{
+    global $EQUIPA_PATH, $EQUIPA_CACHE;
+    $object = null;
+    $requires_new_fetch = true;
+    if (file_exists($EQUIPA_PATH)) {
+        $json = file_get_contents($EQUIPA_PATH);
+        $object = json_decode($json, true);
+        if ($object["timestamp"] + $EQUIPA_CACHE > time()) {
+            $requires_new_fetch = false;
+        }
+    }
+    if ($requires_new_fetch) {
+        $csv = file_get_contents('https://docs.google.com/spreadsheets/d/1N6CDOM8B9-ogiyzOQwAbcwlGspGDXyiYLKXN_C_dxM8/export?format=tsv');
+        $fetched_object = array_map("str_gettsv", explode("\n", $csv));
+        $object = [];
+        $object["timestamp"] = time();
+        $equipa = [];
+        foreach ($fetched_object as $entry) {
+            if ($entry[0] != "Timestamp") {
+                array_push($equipa, $entry);
+            }
+        }
+        usort($equipa, 'sortByOrder');
+        $object["equipa"] = $equipa;
+        $file = fopen($EQUIPA_PATH, "w");
+        fwrite($file, json_encode($object));
+        fclose($file);
+    }
+    return $object;
+}
+$fetched_media_testemunhos = fetchTestemunhosAndMedia();
+$fetched_media = $fetched_media_testemunhos["media"];
+$fetched_testemunhos = $fetched_media_testemunhos["testemunhos"];
+$fetched_equipa = fetchEquipa()["equipa"];
+get_header();
 
 //svgs
 $teamsvg = '
@@ -111,21 +198,23 @@ $objectivosvg = '<svg xmlns="http://www.w3.org/2000/svg" height="512pt" version=
 $sendmessage = 'Enviar mensagem';
 $seemore = "Ver mais";
 $assine = "Assine a nossa newsletter";
+$titulo_about_us = "Entre em contacto";
 
 
-if ( defined( 'ICL_LANGUAGE_CODE' ) && ICL_LANGUAGE_CODE == 'en' ) {
-  $sendmessage = 'Send message';
-  $seemore = "See more";
-  $assine = "Subscribe our newsletter";
-} 	
+if (defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'en') {
+    $sendmessage = 'Send message';
+    $seemore = "See more";
+    $assine = "Subscribe our newsletter";
+	$titulo_about_us = "Contact us";
+}
 
 //Top header content
 $frases = get_field('frases');
 $titleheader = get_field('texto_principal');
 //mobile ou desktop
 $listaimagensheader =  wp_is_mobile() ? get_field('imagens_mobile') : get_field('imagens_desktop');
-$imgheader = wp_get_attachment_image($listaimagensheader[mt_rand(0,count($listaimagensheader)-1)]['ID'], 'full');
-$desctheader = $frases[mt_rand(0,count($frases)-1)]['frases'];
+$imgheader = wp_get_attachment_image($listaimagensheader[mt_rand(0, count($listaimagensheader)-1)]['ID'], 'full');
+$desctheader = $frases[mt_rand(0, count($frases)-1)]['frases'];
 //echo "<pre>".print_r($titleheader,true)."</pre>";
 
 
@@ -139,7 +228,7 @@ $args = array(
     // The URL to which the form points. Defaults to the current URL which will automatically display a success message after submission
     // If this is overriden you may use af_has_submission to check for a form submission
     'target' => '',
-    // Whether the form output should be echoed or returned	
+    // Whether the form output should be echoed or returned
     'echo' => false,
     // Field values to pre-fill. Should be an array with format: $field_name_or_key => $field_prefill_value
     'values' => array(),
@@ -149,13 +238,14 @@ $args = array(
     'uploader' => 'wp',
     // The URL to redirect to after a successful submission. Defaults to false for no redirection.
     'redirect' => false,
+	 'recaptcha' => true         // recaptcha
 );
-$contactform = advanced_form( 'form_5cb23e43bcaf0', $args ); 
+$contactform = advanced_form('form_5ccd8885af638', $args);
 
 //get 3 most recent posts
 $maximopaginas = 3;
 //global $query_string;
-$query_string = query_posts ('posts_per_page='.$maximopaginas);
+$query_string = query_posts('posts_per_page='.$maximopaginas);
 
 
 
@@ -172,56 +262,69 @@ $coluna3desc = get_field('coluna3')['desc_col3'];
 //post destaque
 $conteudodestaque = get_field('artigo_em_destaque');
 $artigodestaque = get_field('conteudo_destaque');
-$imagedestaque = get_the_post_thumbnail($conteudodestaque);
-$linkdestaque = get_permalink($conteudodestaque);
-$titledestaque = get_the_title($conteudodestaque);
+//echo "valor de conteudo: $conteudodestaque<br>";
+//var_dump($conteudodestaque);
+$imagedestaque = get_the_post_thumbnail($conteudodestaque[0]);
+$linkdestaque = get_permalink($conteudodestaque[0]);
+$titledestaque = get_the_title($conteudodestaque[0]);
 
 //equipa
 $titlequipa = get_field('titulo_equipa');
 $descequipa = get_field('descricao_equipa');
-$membros = get_field('membros');
 $htmlmembros = "";
-if($membros) {
-  foreach ($membros as $membro) {
-    $nome = $membro['nome'];
-    $tipo = $membro['tipo'];
-    $descricao = $membro['descricao'];
-    $imagem = wp_get_attachment_image($membro['imagem'],'medium');
-    $htmlmembros .= '  <div class="team__card">
-                        <div class="team__card__image">'.$imagem.'</div>
-                        <div class="team__card__content">
-                        <div class="name">'.$nome.'</div>
-                        <div class="category">'.$tipo.'</div>
-                        '.$descricao.'
-                        <!--<div class="social">
-                          <a href="" target="_blank" rel="noopener nofollow" title="facebook"><img src="https://source.unsplash.com/300x200/?beach,bikini" alt=""></a>
-                          <a href="" target="_blank" rel="noopener nofollow" title="twitter"><img src="https://source.unsplash.com/400x400/?beach,bikini" alt=""></a>
-                          <a href="" target="_blank" rel="noopener nofollow" title="linkedin"><img src="https://source.unsplash.com/400x600/?beach,bikini" alt=""></a>
-                        </div>-->
-                      </div>
-                      </div>';
-  }
+if ($fetched_equipa) {
+    foreach ($fetched_equipa as $membro) {
+        $nome = $membro[1];
+        $tipo = $membro[2];
+        $descricao = $membro[3];
+        $imagem = '<img src="'.$membro[4].'" class="attachment-medium size-medium" alt="" width="300" height="300">';
+        $htmlmembros .= '<div class="team" >
+        <div class="team__image">'.$imagem.'</div>
+        <div class="team__name">'.$nome.'</div>
+        <div class="team__handle">'.$tipo.'</div>
+        <div class="team__text">'.$descricao.'</div>
+    </div>';
+    }
 }
 
 //testemunhos
 $titletestemunho = get_field('titulo_testemunho');
 $desctestemunho = get_field('descricao_testemunhos');
-$testemunhos = get_field('testemunhos');
 $htmlteste = "";
-//echo var_dump($testemunhos);
-if($testemunhos) {
-  foreach ($testemunhos as $membro) {
-    $nome = $membro['nome'];
-    $tipo = $membro['handle'];
-    $descricao = $membro['texto'];
-    $imagem = wp_get_attachment_image($membro['imagem'],'medium');
-    $htmlteste .= '<div class="testimonial" >
+if ($fetched_testemunhos) {
+    foreach ($fetched_testemunhos as $testemunho) {
+        $nome = $testemunho[2];
+        $handle = $testemunho[7];
+        $descricao = $testemunho[4];
+        $imagem = '<img src="'.$testemunho[5].'" class="attachment-medium size-medium" alt="" width="300" height="300">';
+        $htmlteste .= '<div class="testimonial" >
                       <div class="testimonial__image">'.$imagem.'</div>
                       <div class="testimonial__name">'.$nome.'</div>
-                      <div class="testimonial__handle">'.$tipo.'</div>
+                      <div class="testimonial__handle">'.$handle.'</div>
                       <div class="testimonial__text">'.$descricao.'</div>
                   </div>';
-  }
+    }
+}
+
+//media
+$titlemedia = get_field('titulo_media');
+$descmedia = get_field('descricao_media');
+$htmlmedia = "";
+if ($fetched_media) {
+    foreach ($fetched_media as $media) {
+        $nome = $media[2];
+        $data = $media[3];
+        $descricao = $media[4];
+        $link = $media[6];
+        $imagem = '<img src="'.$media[5].'" class="attachment-medium size-medium" alt="" width="300" height="300">';
+        $htmlmedia .= '<div class="media_entry" >
+                      <div class="media_entry__image">'.$imagem.'</div>
+                      <div class="media_entry__name">'.$nome.'</div>
+                      <div class="media_entry__handle">'.$data.'</div>
+					  <div class="media_entry__handle"><a  target="_blank" rel="noopener noreferrer" href="'.$link.'">Link</a></div>
+                      <div class="media_entry__text">'.$descricao.'</div>
+                  </div>';
+    }
 }
 
 //ULTIMOS POSTS
@@ -230,39 +333,38 @@ $ultimosdesc = get_field('desc_posts');
 
 //contacto
 $contactodesc = get_field('contactos_descricao');
-$contactosup = get_field('contactos_superior');
-$contactosdown = get_field('contactos_inferior');
+//$contactosup = get_field('contactos_superior');
+//$contactosdown = get_field('contactos_inferior');
 
 //footer desc
 $footerdesc = get_field('descricao_about_us');
 
 //imagem contacts
-$imagecontactos = wp_get_attachment_image(get_field('imagem_contactos'),'full');
-$imagenewsletter = wp_get_attachment_image(get_field('imagem_newsletter'),'full');
+$imagecontactos = wp_get_attachment_image(get_field('imagem_contactos'), 'full');
+$imagenewsletter = wp_get_attachment_image(get_field('imagem_newsletter'), 'full');
 
 
 
 //apanhar os 3 posts mais recentes
-global $wp_query; 
+global $wp_query;
 $blogposts = "";
-if ( have_posts() ) {
-  
-    while ( have_posts()) { 
-      the_post();
-      $titulo = esc_html($post->post_title);
-      //$data = date('d.m.Y', strtotime($post->post_date));
+if (have_posts()) {
+    while (have_posts()) {
+        the_post();
+        $titulo = esc_html($post->post_title);
+        //$data = date('d.m.Y', strtotime($post->post_date));
       
-      $imagem =  get_the_post_thumbnail_url($post);
-      $link = get_permalink( $post->ID);
-      $excerto = esc_html(get_the_excerpt($post->ID));
-      $blogposts .= '<!--post-->
+        $imagem =  get_the_post_thumbnail_url($post);
+        $link = get_permalink($post->ID);
+        $excerto = esc_html(get_the_excerpt($post->ID));
+        $blogposts .= '<!--post-->
                     <div class="blog-post">
                       <a href="'.$link.'" class="image" title="'.$titulo.'"><img src="'.$imagem.'" alt="'.$titulo.'"></a>
                       <a class="title" title="'.$titulo.'" href="'.$link.'">'.$titulo.'</a>
                       <div class="description"><p>'.$excerto.'</p></div>
                     </div>
                     <!-- end post -->';
-    } 
+    }
 }
 
 ?>
@@ -303,7 +405,8 @@ if ( have_posts() ) {
   </div>
 </section>
 <!--destaque -->
-<?php if($artigodestaque) { ?>
+<?php if ($artigodestaque) {
+    ?>
 <section class="destaque">
   <div class="destaque__image"><?php echo $imagedestaque; ?></div>
   <div class="destaque__wrap withmargins">
@@ -312,22 +415,44 @@ if ( have_posts() ) {
     <a class="link" href="<?php echo $linkdestaque; ?>"><?php echo $seemore; ?></a>
   </div>
 </section>
-<?php } ?>
+<?php
+} ?>
 <!--equipa-->
-<?php if($membros) {  ?>
-<div class="team withmargins">
+<?php if ($fetched_equipa) {
+        ?>
+<section class="teams" >
   <h2><?php echo $titlequipa; ?></h2>
-  <p class="geral"><?php echo $descequipa; ?></p>
-  <div class="team__wrap">
-  <?php echo $htmlmembros; ?>
-  </div>
-</div>
-<?php } ?>
+  <div class="geral"><?php echo $descequipa; ?></div>
+  <div class="teams__wrap withmargins" id="sliderteam"><?php echo $htmlmembros; ?></div>
+ <div class="prev"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve" fill="#ffffff">
+                     <g>
+                       <g>
+                         <path d="M198.608,246.104L382.664,62.04c5.068-5.056,7.856-11.816,7.856-19.024c0-7.212-2.788-13.968-7.856-19.032l-16.128-16.12
+                           C361.476,2.792,354.712,0,347.504,0s-13.964,2.792-19.028,7.864L109.328,227.008c-5.084,5.08-7.868,11.868-7.848,19.084
+                           c-0.02,7.248,2.76,14.028,7.848,19.112l218.944,218.932c5.064,5.072,11.82,7.864,19.032,7.864c7.208,0,13.964-2.792,19.032-7.864
+                           l16.124-16.12c10.492-10.492,10.492-27.572,0-38.06L198.608,246.104z"></path>
+                       </g>
+                     </g>
+                     </svg></div>
+  <div class="next"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve" fill="#ffffff">
+                     <g>
+                       <g>
+                         <path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
+                           c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028
+                           c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265
+                           c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"></path>
+                       </g>
+                     </g>
+                     </svg></div>
+</section>
+<?php
+    } ?>
 <!--testemunhos -->
-<?php if($testemunhos) {  ?>
+<?php if ($fetched_testemunhos) {
+        ?>
 <section class="testimonials" >
   <h2><?php echo $titletestemunho; ?></h2>
-  <p class="geral"><?php echo $desctestemunho; ?></p>
+  <div class="geral"><?php echo $desctestemunho; ?></div>
   <div class="testimonials__wrap withmargins" id="slidertestimonials"><?php echo $htmlteste; ?></div>
  <div class="prev"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve" fill="#ffffff">
                      <g>
@@ -350,22 +475,65 @@ if ( have_posts() ) {
                      </g>
                      </svg></div>
 </section>
-<?php } ?>
+<?php
+    } ?>
+<!--media -->
+<?php if ($fetched_media) {
+        ?>
+<section class="media_entries" >
+  <h2><?php echo $titlemedia; ?></h2>
+  <div class="geral"><?php echo $descmedia; ?></div>
+  <div class="media_entries__wrap withmargins" id="slidermedias"><?php echo $htmlmedia; ?></div>
+ <div class="prev"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve" fill="#ffffff">
+                     <g>
+                       <g>
+                         <path d="M198.608,246.104L382.664,62.04c5.068-5.056,7.856-11.816,7.856-19.024c0-7.212-2.788-13.968-7.856-19.032l-16.128-16.12
+                           C361.476,2.792,354.712,0,347.504,0s-13.964,2.792-19.028,7.864L109.328,227.008c-5.084,5.08-7.868,11.868-7.848,19.084
+                           c-0.02,7.248,2.76,14.028,7.848,19.112l218.944,218.932c5.064,5.072,11.82,7.864,19.032,7.864c7.208,0,13.964-2.792,19.032-7.864
+                           l16.124-16.12c10.492-10.492,10.492-27.572,0-38.06L198.608,246.104z"></path>
+                       </g>
+                     </g>
+                     </svg></div>
+  <div class="next"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve" fill="#ffffff">
+                     <g>
+                       <g>
+                         <path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12
+                           c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028
+                           c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265
+                           c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"></path>
+                       </g>
+                     </g>
+                     </svg></div>
+</section>
+<?php
+    } ?>
 <!--newsletter -->
 <div class="newsletter">
-<div class="newsletter__image"><?php echo $imagenewsletter; ?></div>
-<div class="newsletter__title">
-  <h2><?php echo $assine; ?></h2>
-  <p class="geral">Lorem ipsum dolor sit amet con inventore?</p>
-</div>
-  <div class="newsletter__wrap withmargins">
-    <input type="text" placeholder="Your email here"><a href="">subscribe</a>
-  </div>
+	<div class="newsletter__image"><?php echo $imagenewsletter; ?></div>
+	<div class="newsletter__title">
+		<h3 style="font-size: 1.2rem;border-radius: .3rem;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;background-color: #d80917;color: #f8f8f8;padding: 15px 25px;z-index: 11;margin-bottom: -2.5vh;width: 18vw;">
+			Newsletter
+		</h3>
+		<div class="validate subscribe-form form-inline justify-content-center" id="subscribers_signup" style="text-align:center; z-index:10;">
+			<div class="form-group" style="min-width: 400px;padding: 25px;background-color: #f8f8f8;border-radius: .3rem;">
+				<p style="color: #333;margin-top: 2vh;">
+					Mantêm te atualizado, subscreve a nossa mailing list!
+				</p>
+				<input type="email" id="email_signup" value="" class="email" required="" name="email" placeholder="Insere o teu email" required style="width: 100%;padding: 3px 5px;resize: none;margin: 0;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-size: 14px;line-height: 1.4;margin-bottom: 2vh;border: 0;border-bottom-color: currentcolor;border-bottom-style: none;border-bottom-width: 0px;background-color: transparent;border-bottom: 1px solid #4d4d4d;margin-top: 2vh;"><br/>
+				<a href="#subscribers_complete" onclick="subscribeEmail()" value="Subscribe" name="subscribe" style="background-color: #d80917;color: #f8f8f8;padding: 15px 25px;border-radius: .3rem;text-decoration: none;">SUBSCREVE</a>
+			</div>
+		</div>
+		<div class="validate subscribe-form form-inline justify-content-center"  id="subscribers_complete" style="text-align:center; z-index:10; display: none;">
+			<div class="form-group" style="min-width: 400px;padding: 25px;background-color: #f8f8f8;border-radius: .3rem;">
+				<p style="color: #333;margin-top: 1vh;">Obrigado pela tua subscrição! Assim não perderás nenhuma informação!</p>
+			</div>
+		</div>
+	</div>
 </div>
 <!-- recent blog -->
 <div class="blog">
   <h2><?php echo $ultimosposts; ?></h2>
-  <p class="geral"><?php echo $ultimosdesc; ?></p>
+  <div class="geral"><?php echo $ultimosdesc; ?></div>
   <div class="blog__wrap withmargins">
     <?php echo $blogposts; ?>
   </div>
@@ -375,15 +543,10 @@ if ( have_posts() ) {
   <div class="contactform__image"><?php echo $imagecontactos; ?></div>
   <div class="contactform__wrap withmargins">
     <div class="contactform-left">
-      <h2>Get in touch</h2>
-      <p class="geral"><?php echo $contactodesc; ?></p>
-      <h3>Find us at</h3>
-        <?php echo $contactosup; ?>
-      <h3>Contacts </h3>
-        <?php echo $contactosdown; ?>
+      <?php echo $contactodesc; ?>
     </div>
     <div class="contactform-right">
-      <h3>Contact us</h3>
+      <h3><?php echo $titulo_about_us; ?></h3>
       <?php echo $contactform; ?>
     </div>
   </div>

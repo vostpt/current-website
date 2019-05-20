@@ -1,0 +1,128 @@
+{
+    "key": "group_5cb23ec390804",
+    "title": "contact form",
+    "fields": [
+        {
+            "key": "field_5cb23ed145178",
+            "label": "Name",
+            "name": "name",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 2,
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "O seu nome",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5cb23f154517a",
+            "label": "email",
+            "name": "email",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 2,
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "O seu email",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5cb242a8edb7c",
+            "label": "assunto",
+            "name": "assunto",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 2,
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "O seu assunto",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5cb23f0845179",
+            "label": "message",
+            "name": "message",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 2,
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "A sua mensagem",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_5ccf2ea9afd68",
+            "label": "captcha",
+            "name": "captcha",
+            "type": "recaptcha",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "site_key": "6Lfa_aEUAAAAAHgvuwJ6Rm94_wAjbCszFxg3aTpT",
+            "secret_key": "6Lfa_aEUAAAAAFuUONZZWxfWt_HxkBPF1K3svzf7",
+            "re_theme": "light",
+            "re_type": "image",
+            "re_size": "normal"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "af_form",
+                "operator": "==",
+                "value": "form_5ccd8885af638"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "recaptcha": 0,
+    "modified": 1557151648
+}
