@@ -337,9 +337,14 @@ div.geral {
     font-size: 1rem;
     position: relative
 }
-
 .header__menu ul.menu li a {
-    color: #4d4d4d
+    color: white;
+	text-decoration:none;
+}
+
+.scroll .header__menu ul.menu li a {
+    color: #4d4d4d;
+	text-decoration:none;
 }
 
 .header__menu ul.menu li a:hover {
@@ -418,6 +423,10 @@ div.geral {
 }
 
 .header__menu .social a svg path {
+    fill: white;
+}
+
+.scroll .header__menu .social a svg path {
     fill: #4d4d4d
 }
 

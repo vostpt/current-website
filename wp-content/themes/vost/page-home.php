@@ -511,7 +511,7 @@ if (have_posts()) {
 <div class="newsletter">
 	<div class="newsletter__image"><?php echo $imagenewsletter; ?></div>
 	<div class="newsletter__title">
-		<h3 style="font-size: 1.2rem;border-radius: .3rem;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;background-color: #d80917;color: #f8f8f8;padding: 15px 25px;z-index: 11;margin-bottom: -2.5vh;width: 18vw;">
+		<h3 style="font-size: 1.2rem;border-radius: .3rem;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;background-color: #d80917;color: #f8f8f8;padding: 15px 25px;z-index: 11;margin-bottom: -2.5vh;">
 			Newsletter
 		</h3>
 		<div class="validate subscribe-form form-inline justify-content-center" id="subscribers_signup" style="text-align:center; z-index:10;">
@@ -519,7 +519,7 @@ if (have_posts()) {
 				<p style="color: #333;margin-top: 2vh;">
 					Mantêm te atualizado, subscreve a nossa mailing list!
 				</p>
-				<input type="email" id="email_signup" value="" class="email" required="" name="email" placeholder="Insere o teu email" required style="width: 100%;padding: 3px 5px;resize: none;margin: 0;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-size: 14px;line-height: 1.4;margin-bottom: 2vh;border: 0;border-bottom-color: currentcolor;border-bottom-style: none;border-bottom-width: 0px;background-color: transparent;border-bottom: 1px solid #4d4d4d;margin-top: 2vh;"><br/>
+				<input type="email" id="email_signup" value="" class="email" required="" name="email" placeholder="Insere o teu email" required style="width: 100%;padding: 3px 5px;resize: none;margin: 0;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-size: 14px;line-height: 1.4;margin-bottom: 7.5%;border: 0;border-bottom-color: currentcolor;border-bottom-style: none;border-bottom-width: 0px;background-color: transparent;border-bottom: 1px solid #4d4d4d;margin-top: 2vh;"><br/>
 				<a href="#subscribers_complete" onclick="subscribeEmail()" value="Subscribe" name="subscribe" style="background-color: #d80917;color: #f8f8f8;padding: 15px 25px;border-radius: .3rem;text-decoration: none;">SUBSCREVE</a>
 			</div>
 		</div>
