@@ -1,66 +1,66 @@
-# vost tema wordpress
+# vost wordpress theme
 
-Actualmente versão 5.1.1 do wp, com plugins wpml, acf, wp bakery, classic editor e acf extended forms instalados.
+Read this in [Portuguese](readme.pt.md)
 
- - **wpml** - gestão multilingua
- - **acf** - para criar custom fields para backoffice
-  - **acf** extended form - criar forms com o acf
-  - **classic editor** - para o editor funcionar (s/ guttenberg)
-  - **wp bakery** - para a criação de posts com templates personalizados.
-- tema criado de raiz para a VOST /vost
+Current version: WordPress 5.1.1, with the following plugins installed: WPML, ACF, WP Bakery, Classic Editor and ACF extended forms.
 
-## Ambiente de desenvolvimento
+ - **[WPML](https://wpml.org/)** - multilingue management;
+ - **[ACF](https://www.advancedcustomfields.com/)** - to create custom fields for backoffice;
+ - **[ACF](https://www.advancedcustomfields.com/)** _extended form_ - create forms with ACF;
+ - **[Classic Editor](https://wordpress.org/plugins/classic-editor/)** - restore previous WordPress editor (w/o guttenberg);
+ - **[WP Bakery](https://wpbakery.com/)** - create posts with custom templates;
+ - Custom-made theme for VOST PT.
 
-O ambiente de produção está feito para trabalhar com gulp, sass, babel e optimização de imagens. Pode-se trabalhar sem isto, mas os ficheiros de produção estão minificados.
+## Development environment
 
-encontra-se em */wp-content/themes/vost/dev*
+The production environment is made to work with gulp, SASS, Babel, and image optimization. You can work without this, but the production files are minified;
 
-## Instalação
+Files in *[/wp-content/themes/vost/dev](wp-content/themes/vost/dev)*.
 
-Correr `npm install` e depois `gulp serve`.
+## Installation
 
-Na pasta wp-content/themes/vost/dev encontra-se o ambiente de produção para minificação, transpilação e compilação do css e js.
+Run `npm install` and then `gulp serve`;
 
-dentro do */dev* fazer npm install e depois correr o gulp com gulp serve
+In folder [/wp-content/themes/vost/dev](wp-content/themes/vost/dev) there will be the production environment to minification, transpile and compilation of CSS and js code;
 
-dentro do */src* estarão os ficheiros .php, copiados diretamente
+Inside */dev* folder make `npm install`, and then run gulp with `gulp serve`;
 
-*/src/media* são optimizadas as imagens ao iniciar o gulp serve e depois são apenas copiadas (questão de processamento de cpu - podem editar o gulpfile caso queiram sempre).
+.php files are located in */src* folder, directly copied;
 
-*/src/js/* concatenados, transpilados e minificados.
-*/src/js/* vendor copiado diretamente sem alteração
-*/src/js/* unique minificado, transpilado
+*/src/media* the images are optimized while gulp is starting, after that they're only copied (CPU processing issues - you can edit gulpfile if you want);
 
-*/src/css/unique* copiado diretamente sem merge
-*/src/css* minificado 
+*/src/js/* concatenated, transpiled and minified.
+*/src/js/* vendor copied directly without changes.
+*/src/js/* unique minified and transpiled;
 
-dentro do */src* estará a base de dados .sql depois de importada é preciso alterar no wp_options os 2 campos do endereço do site.
+*/src/css/unique* copied directly without merge.
+*/src/css* minified;
 
-Actualizar os permalinks.
+Inside */src* folder there will be .sql database. After import it's necessary to change in wp_options the 2 site url fields;
 
-## Pequenas notas
+Update permalinks.
 
-- O css está com cache buster (no header.php).
-- Se por algum motivo se desactivar o wpml, é preciso ter em atenção todas as instancias em que é chamado.
-- O mesmo para o acf mas isso ia-se logo notar :)
-- jquery só é preciso para o slickjs na home, sugestão de optimização de só fazer o call do script ai (está a chamar no functions).
-- o acf poderia-se por a carregar por json, seria ligeiramente mais eficiente
-- edição do menu em apresentação > menus
-- edicao das colunas do footer em apresentação > widgets
-- Duplicar os posts para EN (e informação)
-- no functions.php tem um snippet a remover funções para editores
-- ao fazer upload não esquecer de remover o ambiente de desenvolvimento
-- e editar o wp-config com os dados correctos de ligação à BD.
+## Small notes
+
+- A cache buster is enabled for CSS files (in the header.php file);
+- If, for some reason wpml is disabled, you must pay attention all called instances;
+- The same for ACF, but you would have noticed :) ;
+- jQuery is only needed for slickjs in home (optimization tip - call script only in home, it's already called in functions);
+- In order to improve efficiency, ACF can be loaded using json, it would be more efficient;
+- Menu edition in apresentação > menus;
+- Footer columns edition in apresentação > widgets;
+- Duplicate posts to English (and info);
+- There's a code snippet in the functions.php file that disables editor functionality;
+- When uploading, don't forget to remove development environment;
+- Edit wp-config with correct info about connection to database.
 
 
 ## TODO
 
-- htaccess cache para imagens/static
-- conteudo (e mails de contacto no form)
-- traduções
-- newsletter integrada com mailchimp
-- pagina de arquivo
-- info footer/header global para fazer menos calls a bd
-- remover jquery de carregar globalmente e apenas na home para o slickjs (tentar ter o mais optimizado possivel)
-- 
-
+- .htaccess cache for imagens/static;
+- Content (and contact mails in form);
+- Translate articles to English;
+- Mailchimp integrated newsletter;
+- Archive page;
+- Global header/footer info, to make less calls to database;
+- Disable jQuery global loading, and keep only in home for slickjs (try to optimize as much as possible).
