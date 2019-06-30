@@ -66,3 +66,8 @@ readme.html
 
 wp-content/themes/vost/testemunhos_media.json
 wp-content/themes/vost/equipa.json
+
+# Ignoring subscribe.keys.php
+
+wp-content/themes/vost/subscribe.keys.php
+
