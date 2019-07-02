@@ -258,21 +258,21 @@ $query_string = query_posts('posts_per_page='.$maximopaginas);
 
 //information about vost
 $infovost = get_field('vost_info');
-$column1title = get_field('column1')['title_column1'];
-$column1desc = get_field('column1')['desc_col1'];
-$column2title = get_field('column2')['title_column2'];
-$column2desc = get_field('column2')['desc_col2'];
-$column3title = get_field('column3')['title_column3'];
-$column3desc = get_field('column3')['desc_col3'];
+$column1title = get_field('column1')['title'];
+$column1desc = get_field('column1')['description'];
+$column2title = get_field('column2')['title'];
+$column2desc = get_field('column2')['description'];
+$column3title = get_field('column3')['title'];
+$column3desc = get_field('column3')['description'];
 //echo "<pre>".var_dump($infovost, true)."</pre>";
 
 //featured post
-$featured_articles = get_field('featured_articles');
+$featured_article = get_field('featured_article');
 $featured_content = get_field('featured_content');
 
-$featured_image = get_the_post_thumbnail($featured_articles[0]);
-$featured_link = get_permalink($featured_articles[0]);
-$featured_title = get_the_title($featured_articles[0]);
+$featured_image = get_the_post_thumbnail($featured_article[0]);
+$featured_link = get_permalink($featured_article[0]);
+$featured_title = get_the_title($featured_article[0]);
 
 //team
 $team_title = get_field('team_title');
@@ -411,13 +411,13 @@ if (have_posts()) {
   </div>
 </section>
 <!--destaque -->
-<?php if ($featured_articles) {
+<?php if ($featured_article) {
     ?>
 <section class="destaque">
   <div class="destaque__image"><?php echo $featured_image; ?></div>
   <div class="destaque__wrap withmargins">
     <div class="title"><?php echo $featured_title; ?></div>
-    <div class="freecontent"><?php echo $featured_articles; ?> </div>
+    <div class="freecontent"><?php echo $featured_article; ?> </div>
     <a class="link" href="<?php echo $featured_link; ?>"><?php echo $seemore; ?></a>
   </div>
 </section>
