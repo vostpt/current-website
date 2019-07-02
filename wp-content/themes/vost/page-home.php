@@ -1,5 +1,6 @@
 <?php /* Template Name: HOMEPAGE */ ?>
 <?php
+
 $TESTIMONIALS_AND_MEDIA_PATH = get_template_directory() . "/testimonials_and_media.json";
 $TEAM_PATH = get_template_directory() . "/team.json";
 $TESTIMONIALS_AND_MEDIA_CACHE = 0; //in seconds
@@ -26,7 +27,10 @@ function fetchTestimonialsAndMedia()
         }
     }
     if ($requires_new_fetch) {
-        $csv = file_get_contents('https://docs.google.com/spreadsheets/d/1HymOxQKKdcLISfclW_wrnNsrh-Gcbpel611NDjDKmaA/export?format=tsv');
+        if (get_field('testimonials_media_google') == "") {
+            return ["media" => null, "testimonials" => null];
+        }
+        $csv = file_get_contents(get_field('teastimonials_and_media_google_spreadsheets_url') . '/export?format=tsv');
         $fetched_object = array_map("str_gettsv", explode("\n", $csv));
         $object = [];
         $object["timestamp"] = time();
@@ -64,6 +68,9 @@ function fetchTeam()
         }
     }
     if ($requires_new_fetch) {
+        if (get_field('team_google_spreadsheets_url') == "") {
+            return ["team" => null];
+        }
         $csv = file_get_contents('https://docs.google.com/spreadsheets/d/1N6CDOM8B9-ogiyzOQwAbcwlGspGDXyiYLKXN_C_dxM8/export?format=tsv');
         $fetched_object = array_map("str_gettsv", explode("\n", $csv));
         $object = [];
