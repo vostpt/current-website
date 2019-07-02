@@ -514,7 +514,18 @@ if (have_posts()) {
                      </svg></div>
 </section>
 <?php
-    } ?>
+    }
+//translation
+$subscribe_to_our_newsletter = "Mantêm te atualizado, subscreve a nossa mailing list!";
+$thank_you_newsletter = "Obrigado pela tua subscrição! Assim não perderás nenhuma informação!";
+
+
+if (defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'en') {
+    $subscribe_to_our_newsletter = "Keep updated, subscribe to our mailing list!";
+    $thank_you_newsletter = "Thank you for you subscription! This way you will not lose any information!"
+}
+    
+?>
 <!--newsletter -->
 <div class="newsletter">
 	<div class="newsletter__image"><?php echo $newsletter_image; ?></div>
@@ -525,7 +536,7 @@ if (have_posts()) {
 		<div class="validate subscribe-form form-inline justify-content-center" id="subscribers_signup" style="text-align:center; z-index:10;">
 			<div class="form-group" style="min-width: 400px;padding: 25px;background-color: #f8f8f8;border-radius: .3rem;">
 				<p style="color: #333;margin-top: 2vh;">
-					Mantêm te atualizado, subscreve a nossa mailing list!
+					<?= $subscribe_to_our_newsletter ?>
 				</p>
 				<input type="email" id="email_signup" value="" class="email" required="" name="email" placeholder="Insere o teu email" required style="width: 100%;padding: 3px 5px;resize: none;margin: 0;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-size: 14px;line-height: 1.4;margin-bottom: 7.5%;border: 0;border-bottom-color: currentcolor;border-bottom-style: none;border-bottom-width: 0px;background-color: transparent;border-bottom: 1px solid #4d4d4d;margin-top: 2vh;"><br/>
 				<a href="#subscribers_complete" onclick="subscribeEmail()" value="Subscribe" name="subscribe" style="background-color: #d80917;color: #f8f8f8;padding: 15px 25px;border-radius: .3rem;text-decoration: none;">SUBSCREVE</a>
@@ -533,7 +544,7 @@ if (have_posts()) {
 		</div>
 		<div class="validate subscribe-form form-inline justify-content-center"  id="subscribers_complete" style="text-align:center; z-index:10; display: none;">
 			<div class="form-group" style="min-width: 400px;padding: 25px;background-color: #f8f8f8;border-radius: .3rem;">
-				<p style="color: #333;margin-top: 1vh;">Obrigado pela tua subscrição! Assim não perderás nenhuma informação!</p>
+				<p style="color: #333;margin-top: 1vh;"><?= $thank_you_newsletter ?></p>
 			</div>
 		</div>
 	</div>
