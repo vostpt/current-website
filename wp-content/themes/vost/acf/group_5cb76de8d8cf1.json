@@ -4,6 +4,57 @@
     "fields": [
         {
             "key": "field_5cb76f0a09372",
+            "label": "Settings",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5d1b7d247bd25",
+            "label": "Testimonials and Media Google Spreadsheets Url",
+            "name": "testimonials_and_media_google_spreadsheets_url",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5d1b7dcf7bd26",
+            "label": "Team Google Spreadsheets Url",
+            "name": "team_google_spreadsheets_url",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5d1b7cebc137b",
             "label": "Header",
             "name": "",
             "type": "tab",
@@ -17,13 +68,12 @@
             },
             "hide_admin": 0,
             "placement": "left",
-            "endpoint": 0,
-            "wpml_cf_preferences": 0
+            "endpoint": 0
         },
         {
             "key": "field_5cb76fd509376",
-            "label": "Texto principal",
-            "name": "texto_principal",
+            "label": "Hader Title",
+            "name": "header_title",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -33,7 +83,6 @@
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 0,
             "hide_admin": 0,
             "default_value": "",
             "placeholder": "",
@@ -43,8 +92,8 @@
         },
         {
             "key": "field_5cb76f3209374",
-            "label": "frases",
-            "name": "frases",
+            "label": "phrases",
+            "name": "phrases",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -86,8 +135,8 @@
         },
         {
             "key": "field_5cb76f2109373",
-            "label": "Imagens desktop",
-            "name": "imagens_desktop",
+            "label": "Images Dekstop",
+            "name": "images_desktop",
             "type": "gallery",
             "instructions": "",
             "required": 0,
@@ -112,8 +161,8 @@
         },
         {
             "key": "field_5cb8e777784d8",
-            "label": "Imagens mobile",
-            "name": "imagens_mobile",
+            "label": "Images mobile",
+            "name": "images_mobile",
             "type": "gallery",
             "instructions": "",
             "required": 0,
@@ -138,7 +187,7 @@
         },
         {
             "key": "field_5cb7700409377",
-            "label": "informação vost",
+            "label": "VOST Information",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -151,12 +200,11 @@
             },
             "hide_admin": 0,
             "placement": "top",
-            "endpoint": 0,
-            "wpml_cf_preferences": 0
+            "endpoint": 0
         },
         {
             "key": "field_5cb790c48879c",
-            "label": "informação vost",
+            "label": "VOST Information",
             "name": "vost_info",
             "type": "textarea",
             "instructions": "",
@@ -172,13 +220,12 @@
             "placeholder": "",
             "maxlength": "",
             "rows": "",
-            "new_lines": "",
-            "wpml_cf_preferences": 0
+            "new_lines": ""
         },
         {
             "key": "field_5cb7720f0937e",
-            "label": "coluna1",
-            "name": "coluna1",
+            "label": "column1",
+            "name": "column1",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -188,14 +235,13 @@
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 0,
             "hide_admin": 0,
             "layout": "row",
             "sub_fields": [
                 {
                     "key": "field_5cb7713509378",
-                    "label": "titulo_coluna1",
-                    "name": "titulo_coluna1",
+                    "label": "title",
+                    "name": "title",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -205,7 +251,6 @@
                         "class": "",
                         "id": ""
                     },
-                    "wpml_cf_preferences": 0,
                     "hide_admin": 0,
                     "default_value": "",
                     "placeholder": "",
@@ -215,8 +260,8 @@
                 },
                 {
                     "key": "field_5cb7717c0937b",
-                    "label": "desc_col1",
-                    "name": "desc_col1",
+                    "label": "description",
+                    "name": "description",
                     "type": "textarea",
                     "instructions": "",
                     "required": 0,
@@ -231,15 +276,14 @@
                     "placeholder": "",
                     "maxlength": "",
                     "rows": "",
-                    "new_lines": "wpautop",
-                    "wpml_cf_preferences": 0
+                    "new_lines": "wpautop"
                 }
             ]
         },
         {
-            "key": "field_5cb7724f09380",
-            "label": "coluna2",
-            "name": "coluna2",
+            "key": "field_5d1b7f16f8c29",
+            "label": "column2",
+            "name": "column2",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -250,13 +294,12 @@
                 "id": ""
             },
             "hide_admin": 0,
-            "layout": "block",
-            "wpml_cf_preferences": 0,
+            "layout": "row",
             "sub_fields": [
                 {
-                    "key": "field_5cb7717109379",
-                    "label": "titulo_coluna2",
-                    "name": "titulo_coluna2",
+                    "key": "field_5d1b7f16f8c2a",
+                    "label": "title",
+                    "name": "title",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -266,7 +309,6 @@
                         "class": "",
                         "id": ""
                     },
-                    "wpml_cf_preferences": 0,
                     "hide_admin": 0,
                     "default_value": "",
                     "placeholder": "",
@@ -275,9 +317,9 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5cb771830937c",
-                    "label": "desc_col2",
-                    "name": "desc_col2",
+                    "key": "field_5d1b7f16f8c2b",
+                    "label": "description",
+                    "name": "description",
                     "type": "textarea",
                     "instructions": "",
                     "required": 0,
@@ -292,15 +334,14 @@
                     "placeholder": "",
                     "maxlength": "",
                     "rows": "",
-                    "new_lines": "wpautop",
-                    "wpml_cf_preferences": 0
+                    "new_lines": "wpautop"
                 }
             ]
         },
         {
-            "key": "field_5cb7727b09382",
-            "label": "coluna3",
-            "name": "coluna3",
+            "key": "field_5d1b7f23fd24a",
+            "label": "column3",
+            "name": "column3",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -310,14 +351,13 @@
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 0,
             "hide_admin": 0,
-            "layout": "block",
+            "layout": "row",
             "sub_fields": [
                 {
-                    "key": "field_5cb771740937a",
-                    "label": "titulo_coluna3",
-                    "name": "titulo_coluna3",
+                    "key": "field_5d1b7f23fd24b",
+                    "label": "title",
+                    "name": "title",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -327,7 +367,6 @@
                         "class": "",
                         "id": ""
                     },
-                    "wpml_cf_preferences": 0,
                     "hide_admin": 0,
                     "default_value": "",
                     "placeholder": "",
@@ -336,9 +375,9 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5cb771870937d",
-                    "label": "desc_col3",
-                    "name": "desc_col3",
+                    "key": "field_5d1b7f23fd24c",
+                    "label": "description",
+                    "name": "description",
                     "type": "textarea",
                     "instructions": "",
                     "required": 0,
@@ -353,14 +392,13 @@
                     "placeholder": "",
                     "maxlength": "",
                     "rows": "",
-                    "new_lines": "wpautop",
-                    "wpml_cf_preferences": 0
+                    "new_lines": "wpautop"
                 }
             ]
         },
         {
             "key": "field_5cb776f2f0801",
-            "label": "destaque",
+            "label": "Featured",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -373,13 +411,12 @@
             },
             "hide_admin": 0,
             "placement": "top",
-            "endpoint": 0,
-            "wpml_cf_preferences": 0
+            "endpoint": 0
         },
         {
             "key": "field_5cb776fef0802",
-            "label": "artigo em destaque",
-            "name": "artigo_em_destaque",
+            "label": "Featured Article",
+            "name": "featured_article",
             "type": "relationship",
             "instructions": "",
             "required": 0,
@@ -402,13 +439,12 @@
             ],
             "min": "",
             "max": "",
-            "return_format": "id",
-            "wpml_cf_preferences": 0
+            "return_format": "id"
         },
         {
             "key": "field_5cb7922900d7f",
-            "label": "conteudo_destaque",
-            "name": "conteudo_destaque",
+            "label": "Featured Content",
+            "name": "featured_content",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -423,12 +459,11 @@
             "tabs": "all",
             "toolbar": "full",
             "media_upload": 1,
-            "delay": 0,
-            "wpml_cf_preferences": 0
+            "delay": 0
         },
         {
             "key": "field_5cb77781f0803",
-            "label": "Equipa",
+            "label": "Team",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -441,13 +476,12 @@
             },
             "hide_admin": 0,
             "placement": "left",
-            "endpoint": 0,
-            "wpml_cf_preferences": 0
+            "endpoint": 0
         },
         {
             "key": "field_5cb7778af0804",
-            "label": "titulo_equipa",
-            "name": "titulo_equipa",
+            "label": "Team Title",
+            "name": "team_title",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -457,7 +491,6 @@
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 0,
             "hide_admin": 0,
             "default_value": "",
             "placeholder": "",
@@ -467,8 +500,8 @@
         },
         {
             "key": "field_5cb77792f0805",
-            "label": "descricao equipa",
-            "name": "descricao_equipa",
+            "label": "Team Description",
+            "name": "team_description",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -483,124 +516,11 @@
             "placeholder": "",
             "maxlength": "",
             "rows": "",
-            "new_lines": "wpautop",
-            "wpml_cf_preferences": 0
+            "new_lines": "wpautop"
         },
         {
-            "key": "field_5cb777a9f0806",
-            "label": "membros",
-            "name": "membros",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "hide_admin": 0,
-            "collapsed": "field_5cb777b8f0807",
-            "min": 0,
-            "max": 0,
-            "layout": "block",
-            "button_label": "",
-            "wpml_cf_preferences": 0,
-            "sub_fields": [
-                {
-                    "key": "field_5cb777bef0808",
-                    "label": "imagem",
-                    "name": "imagem",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "wpml_cf_preferences": 0,
-                    "hide_admin": 0,
-                    "return_format": "id",
-                    "preview_size": "thumbnail",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                },
-                {
-                    "key": "field_5cb777b8f0807",
-                    "label": "nome",
-                    "name": "nome",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "wpml_cf_preferences": 0,
-                    "hide_admin": 0,
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_5cb777d9f0809",
-                    "label": "tipo",
-                    "name": "tipo",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "wpml_cf_preferences": 0,
-                    "hide_admin": 0,
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_5cb777e1f080a",
-                    "label": "descrição",
-                    "name": "descricao",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "hide_admin": 0,
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": "wpautop",
-                    "wpml_cf_preferences": 0
-                }
-            ]
-        },
-        {
-            "key": "field_5cb77819f080b",
-            "label": "testemunhos",
+            "key": "field_5d1b8007c9b73",
+            "label": "Testimonials",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -613,13 +533,12 @@
             },
             "hide_admin": 0,
             "placement": "left",
-            "endpoint": 0,
-            "wpml_cf_preferences": 0
+            "endpoint": 0
         },
         {
             "key": "field_5cb77825f080c",
-            "label": "titulo testemunhos",
-            "name": "titulo_testemunho",
+            "label": "Testimonials Title",
+            "name": "testimonials_title",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -629,7 +548,6 @@
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 0,
             "hide_admin": 0,
             "default_value": "",
             "placeholder": "",
@@ -639,8 +557,8 @@
         },
         {
             "key": "field_5cb77838f080d",
-            "label": "descrição testemunhos",
-            "name": "descricao_testemunhos",
+            "label": "Testimonials Description",
+            "name": "testimonials_description",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -655,184 +573,11 @@
             "placeholder": "",
             "maxlength": "",
             "rows": "",
-            "new_lines": "",
-            "wpml_cf_preferences": 0
+            "new_lines": ""
         },
         {
-            "key": "field_5cb77843f080e",
-            "label": "testemunhos",
-            "name": "testemunhos",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "hide_admin": 0,
-            "collapsed": "field_5cb77900f080f",
-            "min": 0,
-            "max": 0,
-            "layout": "block",
-            "button_label": "",
-            "wpml_cf_preferences": 0,
-            "sub_fields": [
-                {
-                    "key": "field_5cb77900f080f",
-                    "label": "nome",
-                    "name": "nome",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "wpml_cf_preferences": 0,
-                    "hide_admin": 0,
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_5cb77905f0810",
-                    "label": "handle",
-                    "name": "handle",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "wpml_cf_preferences": 0,
-                    "hide_admin": 0,
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_5cb7790ef0811",
-                    "label": "texto",
-                    "name": "texto",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "hide_admin": 0,
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": "",
-                    "wpml_cf_preferences": 0
-                },
-                {
-                    "key": "field_5cb77916f0812",
-                    "label": "imagem",
-                    "name": "imagem",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "wpml_cf_preferences": 0,
-                    "hide_admin": 0,
-                    "return_format": "id",
-                    "preview_size": "thumbnail",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                }
-            ]
-        },
-        {
-            "key": "field_5cb77943f0813",
-            "label": "Posts",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "hide_admin": 0,
-            "placement": "top",
-            "endpoint": 0,
-            "wpml_cf_preferences": 0
-        },
-        {
-            "key": "field_5cb7794ff0814",
-            "label": "titulo",
-            "name": "titulo_posts",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "wpml_cf_preferences": 0,
-            "hide_admin": 0,
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5cb77966f0815",
-            "label": "desc_posts",
-            "name": "desc_posts",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "hide_admin": 0,
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "",
-            "wpml_cf_preferences": 0
-        },
-        {
-            "key": "field_5cb77a43f0816",
-            "label": "Contacto",
+            "key": "field_5cb77819f080b",
+            "label": "Media",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -845,13 +590,32 @@
             },
             "hide_admin": 0,
             "placement": "left",
-            "endpoint": 0,
-            "wpml_cf_preferences": 0
+            "endpoint": 0
         },
         {
-            "key": "field_5cb77a9af0817",
-            "label": "contactos descrição",
-            "name": "contactos_descricao",
+            "key": "field_5d1b801e47ca7",
+            "label": "Media Title",
+            "name": "media_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5d1b803647ca8",
+            "label": "Media Description",
+            "name": "media_description",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -866,54 +630,11 @@
             "placeholder": "",
             "maxlength": "",
             "rows": "",
-            "new_lines": "wpautop",
-            "wpml_cf_preferences": 0
+            "new_lines": ""
         },
         {
-            "key": "field_5cb77ab1f0818",
-            "label": "contactos superior",
-            "name": "contactos_superior",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "hide_admin": 0,
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "wpautop",
-            "wpml_cf_preferences": 0
-        },
-        {
-            "key": "field_5cb77abff0819",
-            "label": "contactos inferior",
-            "name": "contactos_inferior",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "hide_admin": 0,
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "wpautop",
-            "wpml_cf_preferences": 0
-        },
-        {
-            "key": "field_5cb77d9df081a",
-            "label": "footer",
+            "key": "field_5cb77943f0813",
+            "label": "Latest Posts",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -926,13 +647,32 @@
             },
             "hide_admin": 0,
             "placement": "top",
-            "endpoint": 0,
-            "wpml_cf_preferences": 0
+            "endpoint": 0
         },
         {
-            "key": "field_5cb77daaf081b",
-            "label": "descriçao_about us",
-            "name": "descricao_about_us",
+            "key": "field_5cb7794ff0814",
+            "label": "Latest Posts Title",
+            "name": "latest_posts_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5cb77966f0815",
+            "label": "Latest Posts Description",
+            "name": "latest_posts_description",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -947,8 +687,81 @@
             "placeholder": "",
             "maxlength": "",
             "rows": "",
-            "new_lines": "",
-            "wpml_cf_preferences": 0
+            "new_lines": ""
+        },
+        {
+            "key": "field_5cb77a43f0816",
+            "label": "Contact",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5cb77a9af0817",
+            "label": "Contact Description",
+            "name": "contact_description",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_5cb77d9df081a",
+            "label": "Footer",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5cb77daaf081b",
+            "label": "About Us Description",
+            "name": "about_us_description",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
         },
         {
             "key": "field_5cb7a4c85c25e",
@@ -1077,8 +890,8 @@
         },
         {
             "key": "field_5cc22b2e69d68",
-            "label": "Imagem newsletter",
-            "name": "imagem_newsletter",
+            "label": "Newsletter Image",
+            "name": "newsletter_image",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -1102,8 +915,8 @@
         },
         {
             "key": "field_5cc22b4069d69",
-            "label": "Imagem contactos",
-            "name": "imagem_contactos",
+            "label": "Contact Image",
+            "name": "contact_image",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -1156,5 +969,6 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1556305602
+    "recaptcha": 0,
+    "modified": 1562085060
 }
