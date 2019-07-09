@@ -55,6 +55,26 @@
                 "placeholder": ""
             },
             {
+                "key": "field_5d246e19b22c2",
+                "label": "ACF Form ID",
+                "name": "acf_form_id",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "hide_admin": 0,
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
                 "key": "field_5d1b7cebc137b",
                 "label": "Header",
                 "name": "",
@@ -73,7 +93,7 @@
             },
             {
                 "key": "field_5cb76fd509376",
-                "label": "Hader Title",
+                "label": "Header Title",
                 "name": "header_title",
                 "type": "text",
                 "instructions": "",
@@ -113,8 +133,8 @@
                 "sub_fields": [
                     {
                         "key": "field_5cb76f6b09375",
-                        "label": "frases",
-                        "name": "frases",
+                        "label": "phrases",
+                        "name": "phrases",
                         "type": "text",
                         "instructions": "",
                         "required": 0,
@@ -124,7 +144,6 @@
                             "class": "",
                             "id": ""
                         },
-                        "wpml_cf_preferences": 0,
                         "hide_admin": 0,
                         "default_value": "",
                         "placeholder": "",
@@ -438,8 +457,8 @@
                 "elements": [
                     "featured_image"
                 ],
-                "min": "",
-                "max": "",
+                "min": 1,
+                "max": 1,
                 "return_format": "id"
             },
             {
@@ -692,6 +711,48 @@
             },
             {
                 "key": "field_5cb77a43f0816",
+                "label": "Newsletter",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "hide_admin": 0,
+                "placement": "left",
+                "endpoint": 0
+            },
+            {
+                "key": "field_5cc22b2e69d68",
+                "label": "Newsletter Image",
+                "name": "newsletter_image",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "hide_admin": 0,
+                "return_format": "id",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_5d2468c276d23",
                 "label": "Contact",
                 "name": "",
                 "type": "tab",
@@ -706,6 +767,31 @@
                 "hide_admin": 0,
                 "placement": "left",
                 "endpoint": 0
+            },
+            {
+                "key": "field_5cc22b4069d69",
+                "label": "Contact Image",
+                "name": "contact_image",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "hide_admin": 0,
+                "return_format": "id",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
             },
             {
                 "key": "field_5cb77a9af0817",
@@ -728,7 +814,27 @@
                 "new_lines": "wpautop"
             },
             {
-                "key": "field_5cb77d9df081a",
+                "key": "field_5cb77daaf081b",
+                "label": "Contact Form Title",
+                "name": "contact_form_title",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "hide_admin": 0,
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5cb7a4c85c25e",
                 "label": "Footer",
                 "name": "",
                 "type": "tab",
@@ -745,9 +851,9 @@
                 "endpoint": 0
             },
             {
-                "key": "field_5cb77daaf081b",
-                "label": "About Us Description",
-                "name": "about_us_description",
+                "key": "field_5d24690c362f5",
+                "label": "Description",
+                "name": "description_footer",
                 "type": "textarea",
                 "instructions": "",
                 "required": 0,
@@ -765,8 +871,8 @@
                 "new_lines": ""
             },
             {
-                "key": "field_5cb7a4c85c25e",
-                "label": "Social & cookie & g analytics",
+                "key": "field_5d2468f599fee",
+                "label": "Social & Cookie & Google Analytics",
                 "name": "",
                 "type": "tab",
                 "instructions": "",
@@ -888,56 +994,6 @@
                 "prepend": "",
                 "append": "",
                 "maxlength": ""
-            },
-            {
-                "key": "field_5cc22b2e69d68",
-                "label": "Newsletter Image",
-                "name": "newsletter_image",
-                "type": "image",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "50",
-                    "class": "",
-                    "id": ""
-                },
-                "hide_admin": 0,
-                "return_format": "id",
-                "preview_size": "thumbnail",
-                "library": "all",
-                "min_width": "",
-                "min_height": "",
-                "min_size": "",
-                "max_width": "",
-                "max_height": "",
-                "max_size": "",
-                "mime_types": ""
-            },
-            {
-                "key": "field_5cc22b4069d69",
-                "label": "Contact Image",
-                "name": "contact_image",
-                "type": "image",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "50",
-                    "class": "",
-                    "id": ""
-                },
-                "hide_admin": 0,
-                "return_format": "id",
-                "preview_size": "thumbnail",
-                "library": "all",
-                "min_width": "",
-                "min_height": "",
-                "min_size": "",
-                "max_width": "",
-                "max_height": "",
-                "max_size": "",
-                "mime_types": ""
             }
         ],
         "location": [
