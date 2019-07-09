@@ -90,7 +90,6 @@ $cookie = get_field('cookie_consent', icl_object_id(64, 'page', false, ICL_LANGU
 		
 	<?php wp_nav_menu(array(
             'menu' => 'footer',
-            'theme_location' => 'footer-menu',
             'container_class' => 'menu-wrapper', //wrapper calss
             'menu_class' => 'footer-menu',      //menu class
             ));
