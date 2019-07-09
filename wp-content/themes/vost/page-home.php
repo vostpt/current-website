@@ -419,7 +419,7 @@ if (have_posts()) {
   <div class="destaque__image"><?php echo $featured_image; ?></div>
   <div class="destaque__wrap withmargins">
     <div class="title"><?php echo $featured_title; ?></div>
-    <div class="freecontent"><?php echo $featured_article; ?> </div>
+    <div class="freecontent"><?php echo $featured_content; ?> </div>
     <a class="link" href="<?php echo $featured_link; ?>"><?php echo $seemore; ?></a>
   </div>
 </section>
