@@ -4,7 +4,7 @@
 //header
 get_header();
 
-$listaimagensheader =  wp_is_mobile() ? get_field('imagens_mobile', icl_object_id(64, 'page', false, ICL_LANGUAGE_CODE)) : get_field('imagens_desktop', icl_object_id(64, 'page', false, ICL_LANGUAGE_CODE));
+$listaimagensheader =  wp_is_mobile() ? get_field('images_mobile', icl_object_id(64, 'page', false, ICL_LANGUAGE_CODE)) : get_field('images_desktop', icl_object_id(64, 'page', false, ICL_LANGUAGE_CODE));
 $imgheader = wp_get_attachment_image($listaimagensheader[mt_rand(0, count($listaimagensheader)-1)]['ID'], 'full');
 $titleheader = "Arquivo";
 if (defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'en') {
