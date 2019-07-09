@@ -305,7 +305,7 @@ if ($fetched_testimonials) {
         $handle = $testimonial[7];
         $description = $testimonial[4];
         $image = '<img src="'.$testimonial[5].'" class="attachment-medium size-medium" alt="" width="300" height="300">';
-        $htmlteste .= '<div class="testimonial" >
+        $htmltestimonials .= '<div class="testimonial" >
                       <div class="testimonial__image">'.$image.'</div>
                       <div class="testimonial__name">'.$name.'</div>
                       <div class="testimonial__handle">'.$handle.'</div>
