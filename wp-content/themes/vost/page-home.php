@@ -315,7 +315,7 @@ if ($fetched_testimonials) {
 }
 
 //media
-$media_title = get_field('title_media');
+$media_title = get_field('media_title');
 $media_description = get_field('media_description');
 $htmlmedia = "";
 if ($fetched_media) {
