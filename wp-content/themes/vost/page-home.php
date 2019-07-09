@@ -522,7 +522,7 @@ $thank_you_newsletter = "Obrigado pela tua subscrição! Assim não perderás ne
 
 if (defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'en') {
     $subscribe_to_our_newsletter = "Keep updated, subscribe to our mailing list!";
-    $thank_you_newsletter = "Thank you for you subscription! This way you will not lose any information!"
+    $thank_you_newsletter = "Thank you for you subscription! This way you will not lose any information!";
 }
     
 ?>
