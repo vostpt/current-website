@@ -59,15 +59,15 @@ viewBox="0 0 486.392 486.392" style="enable-background:new 0 0 486.392 486.392;"
 </svg>';
 
 //desc from homepage
-$descfooter = get_field('descricao_about_us',icl_object_id(5, 'page', false,ICL_LANGUAGE_CODE));
-$facebook  = get_field('facebook',icl_object_id(5, 'page', false,ICL_LANGUAGE_CODE));
-$reddit  = get_field('reddit',icl_object_id(5, 'page', false,ICL_LANGUAGE_CODE));
-$twitter  = get_field('twitter',icl_object_id(5, 'page', false,ICL_LANGUAGE_CODE));
-$instagram  = get_field('instagram',icl_object_id(5, 'page', false,ICL_LANGUAGE_CODE));
+$descfooter = get_field('description_footer', icl_object_id(5, 'page', false, ICL_LANGUAGE_CODE));
+$facebook  = get_field('facebook', icl_object_id(5, 'page', false, ICL_LANGUAGE_CODE));
+$reddit  = get_field('reddit', icl_object_id(5, 'page', false, ICL_LANGUAGE_CODE));
+$twitter  = get_field('twitter', icl_object_id(5, 'page', false, ICL_LANGUAGE_CODE));
+$instagram  = get_field('instagram', icl_object_id(5, 'page', false, ICL_LANGUAGE_CODE));
 //google analytics
-$ga = get_field('ganalytics',icl_object_id(5, 'page', false,ICL_LANGUAGE_CODE));
+$ga = get_field('ganalytics', icl_object_id(5, 'page', false, ICL_LANGUAGE_CODE));
 //cookie
-$cookie = get_field('cookie_consent',icl_object_id(5, 'page', false,ICL_LANGUAGE_CODE));
+$cookie = get_field('cookie_consent', icl_object_id(5, 'page', false, ICL_LANGUAGE_CODE));
 
 ?>
 
@@ -78,9 +78,9 @@ $cookie = get_field('cookie_consent',icl_object_id(5, 'page', false,ICL_LANGUAGE
 			<?php echo $descfooter; ?>
 		</div>
 		<!--widget 1-->
-		<?php dynamic_sidebar( 'widget_footer1' ); ?>
+		<?php dynamic_sidebar('widget_footer1'); ?>
 		<!-- widget 2-->
-		<?php  dynamic_sidebar( 'widget_footer2' ); ?>
+		<?php  dynamic_sidebar('widget_footer2'); ?>
 	</div>
 	<!-- menu-->
 	<div class="footerino withmargins">
@@ -88,18 +88,18 @@ $cookie = get_field('cookie_consent',icl_object_id(5, 'page', false,ICL_LANGUAGE
 			<?php echo bloginfo('name') . ' ' .  date('Y'); ?>
 		</div>
 		
-	<?php wp_nav_menu( array( 
-			'menu' => 'footer',
-			'theme_location' => 'footer-menu', 
-			'container_class' => 'menu-wrapper', //wrapper calss
-			'menu_class' => 'footer-menu',      //menu class
-			) ); 
-		?>		
+	<?php wp_nav_menu(array(
+            'menu' => 'footer',
+            'theme_location' => 'footer-menu',
+            'container_class' => 'menu-wrapper', //wrapper calss
+            'menu_class' => 'footer-menu',      //menu class
+            ));
+        ?>		
 		<div class="social">
-						<?php if($facebook) { ?><a href="<?php echo $facebook; ?>"  target="_blank" rel="nofollow noopener" title="facebook"><?php echo $facebooksvg; ?></a> <?php } ?>
-						<?php if($twitter) { ?><a href="<?php echo $twitter; ?>"  target="_blank" rel="nofollow noopener" title="twitter"><?php echo $twittersvg; ?></a><?php } ?>
-						<?php if($reddit) { ?><a href="<?php echo $reddit; ?>" target="_blank"  rel="nofollow noopener" title="reddit"><?php echo $redditsvg; ?></a><?php } ?>
-						<?php if($instagram) { ?><a href="<?php echo $instagram; ?>" target="_blank"  rel="nofollow noopener" title="instagram"><?php echo $instasvg; ?></a><?php } ?>
+						<?php if ($facebook) { ?><a href="<?php echo $facebook; ?>"  target="_blank" rel="nofollow noopener" title="facebook"><?php echo $facebooksvg; ?></a> <?php } ?>
+						<?php if ($twitter) { ?><a href="<?php echo $twitter; ?>"  target="_blank" rel="nofollow noopener" title="twitter"><?php echo $twittersvg; ?></a><?php } ?>
+						<?php if ($reddit) { ?><a href="<?php echo $reddit; ?>" target="_blank"  rel="nofollow noopener" title="reddit"><?php echo $redditsvg; ?></a><?php } ?>
+						<?php if ($instagram) { ?><a href="<?php echo $instagram; ?>" target="_blank"  rel="nofollow noopener" title="instagram"><?php echo $instasvg; ?></a><?php } ?>
 		</div>
 	</div>
 	
@@ -108,7 +108,7 @@ $cookie = get_field('cookie_consent',icl_object_id(5, 'page', false,ICL_LANGUAGE
 <!--fechar html-->
 	</section>
 	<!-- analytics -->
-	<?php if($ga) {  ?>
+	<?php if ($ga) {  ?>
 	<!-- Global Site Tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $ga; ?>"></script>
 	<script>
