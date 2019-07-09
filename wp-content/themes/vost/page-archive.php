@@ -2,14 +2,14 @@
 
 <?php
 //header
-get_header(); 
+get_header();
 
-$listaimagensheader =  wp_is_mobile() ? get_field('imagens_mobile',icl_object_id(5, 'page', false,ICL_LANGUAGE_CODE)) : get_field('imagens_desktop',icl_object_id(5, 'page', false,ICL_LANGUAGE_CODE));
-$imgheader = wp_get_attachment_image($listaimagensheader[mt_rand(0,count($listaimagensheader)-1)]['ID'], 'full');
+$listaimagensheader =  wp_is_mobile() ? get_field('imagens_mobile', icl_object_id(64, 'page', false, ICL_LANGUAGE_CODE)) : get_field('imagens_desktop', icl_object_id(64, 'page', false, ICL_LANGUAGE_CODE));
+$imgheader = wp_get_attachment_image($listaimagensheader[mt_rand(0, count($listaimagensheader)-1)]['ID'], 'full');
 $titleheader = "Arquivo";
-if ( defined( 'ICL_LANGUAGE_CODE' ) && ICL_LANGUAGE_CODE == 'en' ) {
-	$titleheader = "Archive";
-} 
+if (defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'en') {
+    $titleheader = "Archive";
+}
 
 ?>
 
@@ -24,7 +24,7 @@ if ( defined( 'ICL_LANGUAGE_CODE' ) && ICL_LANGUAGE_CODE == 'en' ) {
 </section>
 <section class="main-content" >
 <div class="blog__wrap withmargins archive" style="">
-  <?php 
+  <?php
    $args = array(
     'post_type' => 'post',
     // 'cat' => '2,6,17,38' ,
@@ -33,34 +33,34 @@ if ( defined( 'ICL_LANGUAGE_CODE' ) && ICL_LANGUAGE_CODE == 'en' ) {
     
   );
   $post_query = new WP_Query($args);
-  if($post_query->have_posts() ) {
-    while ( $post_query->have_posts() ) {
-      $post_query->the_post();
-      $titulo = esc_html($post->post_title);
-      //$data = date('d.m.Y', strtotime($post->post_date));
+  if ($post_query->have_posts()) {
+      while ($post_query->have_posts()) {
+          $post_query->the_post();
+          $titulo = esc_html($post->post_title);
+          //$data = date('d.m.Y', strtotime($post->post_date));
       
-      $imagem =  get_the_post_thumbnail_url($post);
-      $link = get_permalink( $post->ID);
-      $excerto = esc_html(get_the_excerpt($post->ID));
-      $blogposts = '<!--post-->
+          $imagem =  get_the_post_thumbnail_url($post);
+          $link = get_permalink($post->ID);
+          $excerto = esc_html(get_the_excerpt($post->ID));
+          $blogposts = '<!--post-->
                     <div class="blog-post">
                       <a href="'.$link.'" class="image" title="'.$titulo.'"><img src="'.$imagem.'" alt="'.$titulo.'"></a>
                       <a class="title" title="'.$titulo.'" href="'.$link.'">'.$titulo.'</a>
                       <div class="description"><p>'.$excerto.'</p></div>
                     </div>
                     <!-- end post -->';
-      echo $blogposts;
-    }
+          echo $blogposts;
+      }
   }
   ?>
 </div>
 
 <section class="withmargins pagination">
-  <?php 
+  <?php
    $args = [
-     'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+     'base'         => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
       'total'        => $post_query->max_num_pages,
-      'current'      => max( 1, get_query_var( 'paged' ) ),
+      'current'      => max(1, get_query_var('paged')),
       'format'       => '?paged=%#%',
       'show_all'     => false,
       'type'         => 'plain',
@@ -72,16 +72,16 @@ if ( defined( 'ICL_LANGUAGE_CODE' ) && ICL_LANGUAGE_CODE == 'en' ) {
       'add_args'     => false,
       'add_fragment' => '',
     ];
-    echo paginate_links( $args);
+    echo paginate_links($args);
 
 
   ?>
 </section>
 <!-- style -->
 
-<?php 
+<?php
 //footer.php
-get_footer(); 
-//wp_footer(); 
+get_footer();
+//wp_footer();
 ?>
 
