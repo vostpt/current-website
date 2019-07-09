@@ -344,8 +344,7 @@ $contact_description = get_field('contact_description');
 //$contactosup = get_field('contactos_superior');
 //$contactosdown = get_field('contactos_inferior');
 
-//footer desc
-$about_us_description = get_field('about_us_description');
+$contact_form_title = get_field('contact_form_title');
 
 //imagem contacts
 $contact_image = wp_get_attachment_image(get_field('contact_image'), 'full');
@@ -565,7 +564,7 @@ if (defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'en') {
       <?php echo $contact_description; ?>
     </div>
     <div class="contactform-right">
-      <h3><?php echo $about_us_description; ?></h3>
+      <h3><?php echo $contact_form_title; ?></h3>
       <?php echo $contactform; ?>
     </div>
   </div>
