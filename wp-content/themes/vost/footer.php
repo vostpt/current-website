@@ -59,15 +59,15 @@ viewBox="0 0 486.392 486.392" style="enable-background:new 0 0 486.392 486.392;"
 </svg>';
 
 //desc from homepage
-$descfooter = get_field('description_footer', icl_object_id(5, 'page', false, ICL_LANGUAGE_CODE));
-$facebook  = get_field('facebook', icl_object_id(5, 'page', false, ICL_LANGUAGE_CODE));
-$reddit  = get_field('reddit', icl_object_id(5, 'page', false, ICL_LANGUAGE_CODE));
-$twitter  = get_field('twitter', icl_object_id(5, 'page', false, ICL_LANGUAGE_CODE));
-$instagram  = get_field('instagram', icl_object_id(5, 'page', false, ICL_LANGUAGE_CODE));
+$descfooter = get_field('description_footer', icl_object_id(64, 'page', false, ICL_LANGUAGE_CODE));
+$facebook  = get_field('facebook', icl_object_id(64, 'page', false, ICL_LANGUAGE_CODE));
+$reddit  = get_field('reddit', icl_object_id(64, 'page', false, ICL_LANGUAGE_CODE));
+$twitter  = get_field('twitter', icl_object_id(64, 'page', false, ICL_LANGUAGE_CODE));
+$instagram  = get_field('instagram', icl_object_id(64, 'page', false, ICL_LANGUAGE_CODE));
 //google analytics
-$ga = get_field('ganalytics', icl_object_id(5, 'page', false, ICL_LANGUAGE_CODE));
+$ga = get_field('ganalytics', icl_object_id(64, 'page', false, ICL_LANGUAGE_CODE));
 //cookie
-$cookie = get_field('cookie_consent', icl_object_id(5, 'page', false, ICL_LANGUAGE_CODE));
+$cookie = get_field('cookie_consent', icl_object_id(64, 'page', false, ICL_LANGUAGE_CODE));
 
 ?>
 
